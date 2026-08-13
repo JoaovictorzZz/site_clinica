@@ -1,3 +1,1376 @@
+strong{
+  color: rgb(3, 48, 50);
+  font-weight: bold;
+}
+cor{
+  color: #168b82;
+}
+amarelo{
+  color: #cbc85e;
+}
+/* =========================================
+   CARD NOSSO CUIDADO
+========================================= */
+
+.care-card {
+  min-height: 470px;
+  padding: 42px;
+
+  border-radius: 32px;
+ background: #70ac9d62;
+
+  border: 1px solid rgba(14, 75, 68, .10);
+
+  box-shadow:
+    0 30px 80px rgba(14, 75, 68, .12);
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   GRID DE FUNDO
+========================================= */
+
+.care-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(14, 75, 68, .04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(14, 75, 68, .04) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+
+  mask-image:
+    radial-gradient(
+      circle at 70% 30%,
+      black,
+      transparent 75%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   ORBES
+========================================= */
+
+.care-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+
+  filter: blur(35px);
+
+  z-index: 0;
+}
+
+
+.care-orb-1 {
+  width: 180px;
+  height: 180px;
+
+  background: rgba(127, 201, 174, .22);
+
+  right: -50px;
+  top: -40px;
+
+  animation:
+    careOrbOne 9s ease-in-out infinite alternate;
+}
+
+
+.care-orb-2 {
+  width: 130px;
+  height: 130px;
+
+  background: rgba(212, 175, 55, .16);
+
+  left: -40px;
+  bottom: 20px;
+
+  animation:
+    careOrbTwo 11s ease-in-out infinite alternate;
+}
+
+
+@keyframes careOrbOne {
+
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-80px, 60px) scale(1.3);
+  }
+
+}
+
+
+@keyframes careOrbTwo {
+
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(70px, -50px);
+  }
+
+}
+
+
+/* =========================================
+   NÚMERO
+========================================= */
+
+.care-number {
+
+  font-size: 7rem;
+
+  line-height: .75;
+
+  color: #0E4B44;
+
+  letter-spacing: -.06em;
+
+  transition:
+    transform .7s cubic-bezier(.22,1,.36,1),
+    opacity .7s ease;
+
+}
+
+
+.care-label {
+
+  font-family: monospace;
+
+  font-size: .72rem;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: .12em;
+
+  color: rgba(14,75,68,.55);
+
+  padding-bottom: 5px;
+}
+
+
+/* =========================================
+   LINHA DE VIDA
+========================================= */
+
+.care-line {
+
+  position: relative;
+
+  height: 2px;
+
+  width: 100%;
+
+  margin-top: 42px;
+
+  background: rgba(14,75,68,.12);
+}
+
+
+.care-line-progress {
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  height: 2px;
+
+  width: 25%;
+
+  background: #D4AF37;
+
+  transition:
+    width 1s cubic-bezier(.22,1,.36,1);
+}
+
+
+.care-point {
+
+  position: absolute;
+
+  top: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #d9dfdd;
+
+  border: 2px solid #f4f1e9;
+
+  transform: translateY(-50%);
+
+  transition:
+    background .5s ease,
+    transform .5s ease,
+    box-shadow .5s ease;
+}
+
+
+.care-point-1 {
+  left: 0;
+}
+
+.care-point-2 {
+  left: 33%;
+}
+
+.care-point-3 {
+  left: 66%;
+}
+
+.care-point-4 {
+  right: 0;
+}
+
+
+.care-point.is-active {
+
+  background: #D4AF37;
+
+  transform:
+    translateY(-50%)
+    scale(1.4);
+
+  box-shadow:
+    0 0 0 5px rgba(212,175,55,.12);
+}
+
+
+/* =========================================
+   ETAPAS
+========================================= */
+
+.care-stage {
+
+  position: relative;
+
+  min-height: 120px;
+
+  margin-top: 38px;
+}
+
+
+.care-stage-item {
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.care-stage-item.is-active {
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+}
+
+
+.care-stage-number {
+
+  font-family: monospace;
+
+  font-size: .7rem;
+
+  letter-spacing: .18em;
+
+  color: #D4AF37;
+
+}
+
+
+.care-stage-item h3 {
+
+  font-family: var(--font-display, serif);
+
+  font-size: 2.2rem;
+
+  color: #0E4B44;
+
+  margin-top: 5px;
+
+  line-height: 1;
+}
+
+
+.care-stage-item p {
+
+  margin-top: 10px;
+
+  color: rgba(14,75,68,.58);
+
+  font-size: .95rem;
+
+}
+
+
+/* =========================================
+   INDICADOR
+========================================= */
+
+.care-pulse {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #D4AF37;
+
+  box-shadow:
+    0 0 0 0 rgba(212,175,55,.45);
+
+  animation: carePulse 2s infinite;
+}
+
+
+@keyframes carePulse {
+
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(212,175,55,.4);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 8px rgba(212,175,55,0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(212,175,55,0);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+
+  .care-card {
+
+    min-height: 420px;
+
+    padding: 30px;
+
+    border-radius: 26px;
+  }
+
+
+  .care-number {
+
+    font-size: 5.5rem;
+  }
+
+
+  .care-stage-item h3 {
+
+    font-size: 1.9rem;
+  }
+
+}
+/* =========================================
+   ELEMENTOS ANIMADOS — ESTILO PREMIUM
+========================================= */
+
+.ps4-elements {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ps4-shape {
+  position: absolute;
+  display: block;
+  will-change: transform, opacity;
+}
+
+
+/* =========================================
+   CÍRCULOS
+========================================= */
+
+.ps4-circle {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.30);
+
+  box-shadow:
+    0 0 35px rgba(255, 255, 255, 0.08),
+    inset 0 0 25px rgba(255, 255, 255, 0.05);
+}
+
+
+/* Círculo branco grande */
+
+.ps4-circle-1 {
+  width: 260px;
+  height: 260px;
+
+  left: -300px;
+  top: 8%;
+
+  animation: ps4CircleOne 18s linear infinite;
+}
+
+
+/* Círculo dourado */
+
+.ps4-circle-2 {
+  width: 150px;
+  height: 150px;
+
+  left: -200px;
+  bottom: 8%;
+
+  background: rgba(212, 175, 55, 0.18);
+
+  border: 2px solid rgba(212, 175, 55, 0.55);
+
+  box-shadow:
+    0 0 35px rgba(212, 175, 55, 0.18),
+    inset 0 0 25px rgba(212, 175, 55, 0.06);
+
+  animation: ps4CircleTwo 23s linear infinite;
+}
+
+
+/* =========================================
+   ANÉIS
+========================================= */
+
+.ps4-ring {
+  border-radius: 50%;
+  background: transparent;
+
+  border: 3px solid rgba(212, 175, 55, 0.55);
+
+  box-shadow:
+    0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+
+/* Anel grande dourado */
+
+.ps4-ring-1 {
+  width: 330px;
+  height: 330px;
+
+  left: -380px;
+  top: 35%;
+
+  animation: ps4RingOne 25s linear infinite;
+}
+
+
+/* Anel menor mint */
+
+.ps4-ring-2 {
+  width: 150px;
+  height: 150px;
+
+  left: -220px;
+  top: 3%;
+
+  border-color: rgba(127, 201, 174, 0.60);
+
+  box-shadow:
+    0 0 30px rgba(127, 201, 174, 0.15);
+
+  animation: ps4RingTwo 20s linear infinite;
+}
+
+
+/* =========================================
+   QUADRADOS
+========================================= */
+
+.ps4-square {
+  border: 2px solid rgba(255, 255, 255, 0.28);
+
+  background: rgba(255, 255, 255, 0.07);
+
+  transform: rotate(45deg);
+
+  box-shadow:
+    0 0 30px rgba(255, 255, 255, 0.06),
+    inset 0 0 20px rgba(255, 255, 255, 0.04);
+}
+
+
+/* Quadrado branco */
+
+.ps4-square-1 {
+  width: 120px;
+  height: 120px;
+
+  left: -180px;
+  top: 28%;
+
+  animation: ps4SquareOne 21s linear infinite;
+}
+
+
+/* Quadrado dourado */
+
+.ps4-square-2 {
+  width: 190px;
+  height: 190px;
+
+  left: -280px;
+  bottom: -30px;
+
+  border-color: rgba(212, 175, 55, 0.45);
+
+  background: rgba(212, 175, 55, 0.06);
+
+  box-shadow:
+    0 0 35px rgba(212, 175, 55, 0.12),
+    inset 0 0 25px rgba(212, 175, 55, 0.05);
+
+  animation: ps4SquareTwo 28s linear infinite;
+}
+
+
+/* =========================================
+   ANIMAÇÃO — CÍRCULO BRANCO
+========================================= */
+
+@keyframes ps4CircleOne {
+
+  0% {
+    transform:
+      translateX(0)
+      translateY(0)
+      scale(.65)
+      rotate(0deg);
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: .65;
+  }
+
+  50% {
+    transform:
+      translateX(55vw)
+      translateY(-80px)
+      scale(1.15)
+      rotate(120deg);
+
+    opacity: .45;
+  }
+
+  80% {
+    opacity: .30;
+  }
+
+  100% {
+    transform:
+      translateX(125vw)
+      translateY(100px)
+      scale(.65)
+      rotate(240deg);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   ANIMAÇÃO — CÍRCULO DOURADO
+========================================= */
+
+@keyframes ps4CircleTwo {
+
+  0% {
+    transform:
+      translateX(0)
+      translateY(0)
+      scale(.6);
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: .75;
+  }
+
+  50% {
+    transform:
+      translateX(60vw)
+      translateY(-120px)
+      scale(1.25);
+
+    opacity: .55;
+  }
+
+  80% {
+    opacity: .30;
+  }
+
+  100% {
+    transform:
+      translateX(125vw)
+      translateY(60px)
+      scale(.65);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   ANIMAÇÃO — ANEL GRANDE
+========================================= */
+
+@keyframes ps4RingOne {
+
+  0% {
+    transform:
+      translateX(0)
+      translateY(100px)
+      rotate(0deg)
+      scale(.5);
+
+    opacity: 0;
+  }
+
+  12% {
+    opacity: .70;
+  }
+
+  50% {
+    transform:
+      translateX(60vw)
+      translateY(-100px)
+      rotate(180deg)
+      scale(1.15);
+
+    opacity: .50;
+  }
+
+  80% {
+    opacity: .30;
+  }
+
+  100% {
+    transform:
+      translateX(125vw)
+      translateY(40px)
+      rotate(360deg)
+      scale(.65);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   ANIMAÇÃO — ANEL MINT
+========================================= */
+
+@keyframes ps4RingTwo {
+
+  0% {
+    transform:
+      translateX(0)
+      translateY(0)
+      scale(.5)
+      rotate(0deg);
+
+    opacity: 0;
+  }
+
+  12% {
+    opacity: .65;
+  }
+
+  50% {
+    transform:
+      translateX(50vw)
+      translateY(130px)
+      scale(1)
+      rotate(180deg);
+
+    opacity: .45;
+  }
+
+  80% {
+    opacity: .25;
+  }
+
+  100% {
+    transform:
+      translateX(120vw)
+      translateY(-80px)
+      scale(.6)
+      rotate(360deg);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   ANIMAÇÃO — QUADRADO BRANCO
+========================================= */
+
+@keyframes ps4SquareOne {
+
+  0% {
+    transform:
+      translateX(0)
+      translateY(100px)
+      rotate(45deg)
+      scale(.5);
+
+    opacity: 0;
+  }
+
+  12% {
+    opacity: .60;
+  }
+
+  50% {
+    transform:
+      translateX(55vw)
+      translateY(-70px)
+      rotate(180deg)
+      scale(1.1);
+
+    opacity: .40;
+  }
+
+  80% {
+    opacity: .25;
+  }
+
+  100% {
+    transform:
+      translateX(125vw)
+      translateY(100px)
+      rotate(360deg)
+      scale(.6);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   ANIMAÇÃO — QUADRADO DOURADO
+========================================= */
+
+@keyframes ps4SquareTwo {
+
+  0% {
+    transform:
+      translateX(0)
+      translateY(0)
+      rotate(45deg)
+      scale(.55);
+
+    opacity: 0;
+  }
+
+  12% {
+    opacity: .60;
+  }
+
+  50% {
+    transform:
+      translateX(65vw)
+      translateY(-130px)
+      rotate(180deg)
+      scale(1.15);
+
+    opacity: .40;
+  }
+
+  80% {
+    opacity: .25;
+  }
+
+  100% {
+    transform:
+      translateX(125vw)
+      translateY(40px)
+      rotate(360deg)
+      scale(.65);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+
+  .ps4-circle-1 {
+    width: 170px;
+    height: 170px;
+  }
+
+  .ps4-circle-2 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ps4-ring-1 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .ps4-ring-2 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ps4-square-1 {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ps4-square-2 {
+    width: 120px;
+    height: 120px;
+  }
+
+}
+/* =========================
+   FUNDO
+========================= */
+
+.quote-section {
+  isolation: isolate;
+  background: #0e4b44;
+}
+
+
+/* Gradiente animado */
+
+.quote-bg {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(127, 201, 174, .40),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(29, 243, 222, .25),
+      transparent 42%
+    ),
+    linear-gradient(
+      120deg,
+      #0E4B44,
+      #12665c,
+      #0E4B44,
+      #16776b,
+      #0E4B44
+    );
+
+  background-size:
+    180% 180%,
+    180% 180%,
+    400% 400%;
+
+  animation: quoteGradient 18s ease-in-out infinite;
+}
+
+
+@keyframes quoteGradient {
+
+  0% {
+    background-position:
+      0% 20%,
+      100% 80%,
+      0% 50%;
+  }
+
+  50% {
+    background-position:
+      80% 70%,
+      20% 30%,
+      100% 50%;
+  }
+
+  100% {
+    background-position:
+      0% 20%,
+      100% 80%,
+      0% 50%;
+  }
+
+}
+
+
+/* =========================
+   ORBS
+========================= */
+
+.quote-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(70px);
+  pointer-events: none;
+  opacity: .35;
+}
+
+
+.quote-orb-1 {
+
+  width: 280px;
+  height: 280px;
+
+  background: #7fc9ae;
+
+  top: -80px;
+  left: 5%;
+
+  animation: orbOne 14s ease-in-out infinite alternate;
+
+}
+
+
+.quote-orb-2 {
+
+  width: 350px;
+  height: 350px;
+
+  background: #1df3de;
+
+  right: -100px;
+  bottom: -120px;
+
+  animation: orbTwo 18s ease-in-out infinite alternate;
+
+}
+
+
+.quote-orb-3 {
+
+  width: 180px;
+  height: 180px;
+
+  background: #ffffff;
+
+  left: 45%;
+  top: 50%;
+
+  opacity: .08;
+
+  animation: orbThree 12s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes orbOne {
+
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(180px, 80px) scale(1.25);
+  }
+
+}
+
+
+@keyframes orbTwo {
+
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-180px, -100px) scale(1.2);
+  }
+
+}
+
+
+@keyframes orbThree {
+
+  0% {
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    transform: translate(80%, -30%);
+  }
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.quote-grid {
+
+  opacity: .06;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.5) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.5) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black,
+      transparent 75%
+    );
+
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.quote-content {
+
+  animation: quoteEnter 1.2s cubic-bezier(.22,1,.36,1) both;
+
+}
+
+
+@keyframes quoteEnter {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* Aspas */
+
+.quote-symbol {
+
+  display: block;
+
+  font-family: serif;
+
+  font-size: 7rem;
+
+  line-height: .5;
+
+  color: rgba(255,255,255,.25);
+
+  margin-bottom: 30px;
+
+}
+
+
+/* Texto */
+
+.quote-text {
+
+  color: rgba(255,255,255,.88);
+
+}
+
+
+/* Parte principal */
+
+.quote-text strong {
+
+  color: white;
+
+}
+
+
+/* Brilho passando pela segunda parte */
+
+.quote-highlight {
+
+  position: relative;
+
+  color: rgba(255,255,255,.75);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255,255,255,.65) 35%,
+      white 50%,
+      rgba(255,255,255,.65) 65%
+    );
+
+  background-size: 250% 100%;
+
+  background-position: 100% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: textShine 6s ease-in-out infinite;
+
+}
+
+
+@keyframes textShine {
+
+  0% {
+    background-position: 100% 0;
+  }
+
+  45% {
+    background-position: 100% 0;
+  }
+
+  65% {
+    background-position: 0% 0;
+  }
+
+  100% {
+    background-position: 0% 0;
+  }
+
+}
+
+
+/* Linha inferior */
+
+.quote-line {
+
+  width: 70px;
+  height: 2px;
+
+  margin: 38px auto 0;
+
+  background: #D4AF37;
+
+  box-shadow:
+    0 0 18px rgba(212,175,55,.45);
+
+  animation: linePulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes linePulse {
+
+  0%, 100% {
+    width: 60px;
+    opacity: .6;
+  }
+
+  50% {
+    width: 110px;
+    opacity: 1;
+  }
+
+}
+/*carrosel*/
+.diff-slide {
+  opacity: 0;
+  transform: translateY(35px);
+  filter: blur(4px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(.22,1,.36,1),
+    filter 0.9s ease;
+  pointer-events: none;
+}
+
+.diff-slide.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  pointer-events: auto;
+}
+
+
+/* Indicadores */
+
+.diff-dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.35);
+  transition: all .5s ease;
+}
+
+.diff-dot.is-active {
+  width: 28px;
+  background: #8ee8c5;
+}
+
+
+/* Linha lateral do número */
+
+.diff-index {
+  position: relative;
+  padding-left: 14px;
+}
+
+.diff-index::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #8ee8c5;
+}
+/* ============================================================
+   SCROLL SUAVE (nav)
+   ============================================================ */
+html{
+  scroll-behavior: smooth;
+}
+section[id]{
+  scroll-margin-top: 96px; /* compensa o header fixo (h-20 = 80px) + respiro */
+}
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+}
+
+/* sublinhado animado nos links do menu */
+.nav-link{ position: relative; }
+.nav-link::after{
+  content:"";
+  position:absolute; left:0; bottom:-4px;
+  width:0; height:2px;
+  background: currentColor;
+  transition: width .35s ease;
+}
+.nav-link:hover::after{ width:100%; }
+
+/* ============================================================
+   REVEAL SYSTEM — entrada com fade + direção (sobe/desce/lados)
+   ============================================================ */
+.reveal{
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+.reveal-down  { transform: translateY(-28px); }
+.reveal-left  { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+.reveal-scale { transform: scale(.92); }
+
+.reveal-1{ transition-delay: .05s; }
+.reveal-2{ transition-delay: .15s; }
+.reveal-3{ transition-delay: .25s; }
+.reveal-4{ transition-delay: .35s; }
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+}
+
+/* ============================================================
+   QUEM SOMOS — hover com transformação dourada
+   ============================================================ */
+#quemsomos .grid > div{
+  transition: background-color .5s ease, border-color .5s ease, transform .4s ease, box-shadow .4s ease;
+}
+#quemsomos .grid > div:hover{
+  transform: translateY(-6px);
+  
+}
+
+/* Cards brancos (Missão/Visão) ganham um dourado bem claro no hover */
+#quemsomos [class*="border-forest/10"]:hover{
+  background-color: #d8bd8bfa;
+  border-color: #C9A66B;
+}
+#quemsomos [class*="border-forest/10"]:hover h3{
+  color: #f7f7f7;
+}
+
+/* Card Valores (verde escuro) ganha um brilho dourado sutil na borda */
+#quemsomos .bg-forest.text-white:hover{
+  box-shadow: 0 20px 45px -18px rgba(201,166,107,.45), inset 0 0 0 1px rgba(201,166,107,.5);
+}
+
+/* Selinho/ícone gira levemente e muda de tom no hover */
+#quemsomos .brand-badge{
+  transition: transform .5s cubic-bezier(.2,.7,.2,1), background-color .5s ease;
+}
+#quemsomos .grid > div:hover .brand-badge{
+  transform: rotate(-8deg) scale(1.08);
+  background-color: #F0DFC0;
+}
+
+/* ============================================================
+   GALERIA DA CLÍNICA (accordion)
+   ============================================================ */
 .accordion-gallery{
   display: flex;
   gap: 0.75rem;

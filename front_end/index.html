@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instituto Vivar — Fisioterapia, Psicologia e Cuidado Interdisciplinar em Laranjal Paulista</title>
+<title>Instituto Vivar </title>
+<link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 <meta name="description" content="Instituto Vivar: fisioterapia infantil e adulto, psicologia infantil, osteopatia e psicopedagogia. Cuidado interdisciplinar e humanizado em Laranjal Paulista/SP.">
 
 <!-- Fonts -->
@@ -25,6 +26,8 @@
           mintsoft:    '#DCEEE5', /* tinta muito clara do mint */
           sand:        '#F6F3EC', /* fundo quente, não branco puro */
           gold:        '#C9A66B', /* acento quente, usado com moderação */
+          azul: '#168b82',
+          amarelo: '#cbc85e'
         },
         fontFamily: {
           display: ['"Fraunces"', 'serif'],
@@ -93,7 +96,7 @@
   <!-- marca d'água do símbolo real da marca -->
   <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-end relative">
     <div class="lg:col-span-7 reveal is-visible">
-      <span class="eyebrow font-mono text-xs font-bold text-forest/70 uppercase">Fisioterapia · Psicologia · Osteopatia · Psicopedagogia</span>
+      <span class="eyebrow font-mono text-base font-bold text-forest/70 uppercase"><strong>Fisioterapia · Psicologia · Osteopatia · Psicopedagogia</strong></span>
       <h1 class="font-display text-[2.6rem] leading-[1.08] sm:text-6xl lg:text-[4.2rem] text-forest mt-5 tracking-tight">
         Especialistas unidos por um só objetivo:<br class="hidden lg:block">
         <span class="text-mint">devolver sua</span> qualidade de vida.
@@ -117,36 +120,211 @@
       </div>
     </div>
 
-    <div class="lg:col-span-5 reveal reveal-2 is-visible">
-      <div class="rounded-3xl bg-forest text-white p-10 relative overflow-hidden">
-        <p class="font-mono text-xs uppercase tracking-[.2em] text-mint">Nosso cuidado</p>
-        <p class="font-display text-6xl mt-3">5</p>
-        <p class="text-white/70 mt-1">especialidades integradas sob o mesmo teto</p>
-        <div class="h-px bg-white/15 my-7"></div>
-        <p class="font-display text-3xl leading-snug">Do bebê<br>ao idoso</p>
-        <p class="text-white/70 mt-2">um só time acompanhando cada fase da vida</p>
+    <div class="lg:col-span-5 reveal reveal-right reveal-2 is-visible">
+
+  <div class="care-card relative overflow-hidden">
+
+    <!-- elementos decorativos -->
+    <div class="care-orb care-orb-1"></div>
+    <div class="care-orb care-orb-2"></div>
+
+    <div class="care-grid"></div>
+
+    <!-- conteúdo -->
+    <div class="relative z-10">
+
+      <div class="flex items-center justify-between">
+
+        <p class="font-mono text-xs uppercase tracking-[.2em] text-forest">
+          Nosso cuidado
+        </p>
+
+        <span class="care-counter font-mono text-xs text-forest/50">
+          01 / 04
+        </span>
+
       </div>
+
+
+      <!-- número -->
+
+      <div class="mt-8 flex items-end gap-3">
+
+        <span class="care-number font-display">
+          5
+        </span>
+
+        <span class="care-label text-forest">
+          especialidades<br>
+          integradas
+        </span>
+
+      </div>
+
+
+      <!-- linha -->
+
+      <div class="care-line">
+
+        <span class="care-line-progress"></span>
+
+        <span class="care-point care-point-1"></span>
+        <span class="care-point care-point-2"></span>
+        <span class="care-point care-point-3"></span>
+        <span class="care-point care-point-4"></span>
+
+      </div>
+
+
+      <!-- fase -->
+
+      <div class="care-stage">
+
+        <div class="care-stage-item is-active">
+
+          <span class="care-stage-number">01</span>
+
+          <h3>
+            Do bebê
+          </h3>
+
+          <p>
+            Cuidado desde os primeiros momentos.
+          </p>
+
+        </div>
+
+
+        <div class="care-stage-item">
+
+          <span class="care-stage-number">02</span>
+
+          <h3>
+            Na infância
+          </h3>
+
+          <p>
+            Desenvolvimento acompanhado de perto.
+          </p>
+
+        </div>
+
+
+        <div class="care-stage-item">
+
+          <span class="care-stage-number">03</span>
+
+          <h3>
+            Na vida adulta
+          </h3>
+
+          <p>
+            Saúde, movimento e equilíbrio.
+          </p>
+
+        </div>
+
+
+        <div class="care-stage-item">
+
+          <span class="care-stage-number">04</span>
+
+          <h3>
+            Ao idoso
+          </h3>
+
+          <p>
+            Mais autonomia e qualidade de vida.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="mt-8 flex items-center gap-3">
+
+        <span class="care-pulse"></span>
+
+        <span class="font-mono text-xs uppercase tracking-[.15em] text-forest/60">
+          Um só time em cada fase da vida
+        </span>
+
+      </div>
+
     </div>
+
+  </div>
+
+</div>
   </div>
 </section>
 
 <!-- ======================================================= -->
 <!-- FAIXA FIXA 1 (parallax)                                  -->
 <!-- ======================================================= -->
-<section class="parallax-band relative py-28 lg:py-36"
-         style="background-image:
-           radial-gradient(circle at 15% 20%, rgba(127,201,174,.35), transparent 45%),
-           radial-gradient(circle at 85% 80%, rgba(127,201,174,.20), transparent 50%),
-           linear-gradient(135deg, #0E4B44 0%, #0B3B36 60%, #0E4B44 100%);">
-  <div class="max-w-4xl mx-auto px-6 text-center reveal">
-    <span class="brand-badge w-16 h-16 mb-8">
-      
-    </span>
-    <p class="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-snug">
-      "Cuidado não é só tratar o sintoma —
-      <span class="text-mint">é acompanhar cada fase da vida com escuta e presença.</span>"
-    </p>
+<!-- Elementos animados de fundo -->
+
+<section
+  class="quote-section relative overflow-hidden py-28 lg:py-32"
+>
+<div class="ps4-elements" aria-hidden="true">
+
+  <span class="ps4-shape ps4-circle ps4-circle-1"></span>
+  <span class="ps4-shape ps4-circle ps4-circle-2"></span>
+
+  <span class="ps4-shape ps4-ring ps4-ring-1"></span>
+  <span class="ps4-shape ps4-ring ps4-ring-2"></span>
+
+  <span class="ps4-shape ps4-square ps4-square-1"></span>
+  <span class="ps4-shape ps4-square ps4-square-2"></span>
+
+</div>
+
+  <!-- FUNDO ANIMADO -->
+
+  <div class="quote-bg absolute inset-0"></div>
+
+  <!-- Luzes flutuantes -->
+
+  <div class="quote-orb quote-orb-1"></div>
+  <div class="quote-orb quote-orb-2"></div>
+  <div class="quote-orb quote-orb-3"></div>
+
+
+  <!-- GRID SUTIL -->
+
+  <div class="quote-grid absolute inset-0"></div>
+
+
+  <!-- CONTEÚDO -->
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+
+    <div class="quote-content">
+
+      <span class="quote-symbol">
+        “
+      </span>
+
+      <p class="quote-text font-display text-3xl sm:text-4xl lg:text-5xl leading-snug">
+
+        <strong>
+          Cuidado não é só tratar o sintoma
+        </strong>
+
+        <span class="quote-highlight">
+          é acompanhar cada fase da vida com escuta e presença.
+        </span>
+
+      </p>
+
+      <div class="quote-line"></div>
+
+    </div>
+
   </div>
+
 </section>
 
 <!-- ======================================================= -->
@@ -155,13 +333,13 @@
 <section id="quemsomos" class="py-28 lg:py-36">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="grid lg:grid-cols-12 gap-14 items-start">
-      <div class="lg:col-span-5 reveal">
-        <span class="eyebrow font-mono text-xs font-bold text-mint uppercase">Quem somos</span>
+      <div class="lg:col-span-5 reveal reveal-left">
+        <span class="eyebrow font-mono text-lg font-bold text-mint uppercase">Quem somos</span>
         <h2 class="font-display text-4xl sm:text-5xl text-forest mt-4 leading-tight">
           Um instituto interdisciplinar, feito de acolhimento.
         </h2>
       </div>
-      <div class="lg:col-span-7 reveal reveal-2">
+      <div class="lg:col-span-7 reveal reveal-right reveal-2">
         <p class="text-lg text-ink/70 leading-relaxed">
           Somos um Instituto interdisciplinar comprometido com o cuidado integral
           e humanizado de crianças, adultos e suas famílias. Acreditamos na força
@@ -173,43 +351,43 @@
 
     <!-- Missão · Visão · Valores em cards -->
     <div class="grid md:grid-cols-3 gap-6 mt-16">
-      <div class="reveal reveal-1 bg-white border border-forest/10 rounded-2xl p-8 hover:border-mint transition-colors">
+      <div class="reveal reveal-left reveal-1 bg-white border border-forest/10 rounded-2xl p-8 transition-colors">
         <span class="brand-badge w-11 h-11 mb-6 bg-mintsoft">
           <img src="img/mission.png" alt="" class="w-6 h-6">
         </span>
-        <h3 class="font-display text-2xl text-forest">Missão</h3>
-        <p class="text-ink/65 mt-3 text-sm leading-relaxed">
+        <h3 class="font-display text-3xl text-forest">Missão</h3>
+        <p class="text-black mt-3 text-base leading-relaxed">
           Criar um ambiente seguro, afetuoso e profissional, onde cada pessoa se
           sinta vista, compreendida e acompanhada de forma única — com uma equipe
           integrada que alia conhecimento técnico, sensibilidade e empatia.
         </p>
       </div>
 
-      <div class="reveal reveal-2 bg-white border border-forest/10 rounded-2xl p-8 hover:border-mint transition-colors">
+      <div class="reveal reveal-2 bg-white border border-forest/10 rounded-2xl p-8 transition-colors">
         <span class="brand-badge w-11 h-11 mb-6 bg-mintsoft">
           <img src="img/binoculars.png" alt="" class="w-6 h-6">
         </span>
-        <h3 class="font-display text-2xl text-forest">Visão</h3>
-        <p class="text-ink/65 mt-3 text-sm leading-relaxed">
+        <h3 class="font-display text-3xl text-forest">Visão</h3>
+        <p class="text-black mt-3 text-base leading-relaxed">
           Ser um instituto de referência no cuidado interdisciplinar, reconhecido
           por promover o desenvolvimento integral e o bem-estar de cada indivíduo
           — um espaço acolhedor e transformador em todas as fases da vida.
         </p>
       </div>
-      <div class="reveal reveal-3 bg-forest text-white rounded-2xl p-8">
+      <div class="reveal reveal-2 bg-white border border-forest/10 rounded-2xl p-8 transition-colors">
         <span class="brand-badge w-11 h-11 mb-6">
           <img src="img/bars.png" alt="" class="w-6 h-6">
         </span>
-        <h3 class="font-display text-2xl">Valores</h3>
+        <h3 class="font-display text-3xl">Valores</h3>
         <div class="flex flex-wrap gap-2 mt-4">
-          <span class="text-xs font-semibold bg-white/10 border border-white/15 rounded-full px-3 py-1.5">Amor</span>
-          <span class="text-xs font-semibold bg-white/10 border border-white/15 rounded-full px-3 py-1.5">Alegria</span>
-          <span class="text-xs font-semibold bg-white/10 border border-white/15 rounded-full px-3 py-1.5">Transparência</span>
-          <span class="text-xs font-semibold bg-white/10 border border-white/15 rounded-full px-3 py-1.5">Conhecimento</span>
-          <span class="text-xs font-semibold bg-white/10 border border-white/15 rounded-full px-3 py-1.5">Comprometimento</span>
-          <span class="text-xs font-semibold bg-white/10 border border-white/15 rounded-full px-3 py-1.5">Empatia</span>
+          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Amor</span>
+          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Alegria</span>
+          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Transparência</span>
+          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Conhecimento</span>
+          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Comprometimento</span>
+          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Empatia</span>
         </div>
-        <p class="text-white/60 mt-5 text-sm leading-relaxed">
+        <p class="text-black mt-5 text-base leading-relaxed">
           Guiamos cada atendimento com afeto genuíno, transparência e busca
           constante por conhecimento — comprometidos com a jornada de cada
           paciente e sua família.
@@ -218,6 +396,168 @@
     </div>
   </div>
 </section>
+<!-- DIFERENCIAIS — terreno pronto para vídeo de fundo        -->
+<!-- ======================================================= -->
+
+ 
+<section id="diferenciais" class="relative bg-forest h-[200vh]">
+
+  <!-- Divisória superior -->
+<div class="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#8F6B18] via-[#D4AF37] to-[#8F6B18] z-30"></div>
+
+  <div class="diff-pin sticky top-0 h-screen overflow-hidden">
+
+    <!-- VÍDEO -->
+    <video
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="img/diferenciais-poster.jpg"
+    >
+      <source src="video/video_clinica.mp4" type="video/mp4">
+    </video>
+
+
+    <!-- Overlay bem mais leve -->
+    <div class="absolute inset-0 bg-gradient-to-r from-forest/90 via-forest/35 to-transparent"></div>
+
+    <div class="absolute inset-0 bg-forest/5"></div>
+
+
+    <!-- CONTEÚDO -->
+    <div class="relative z-10 h-full flex items-center">
+
+      <div class="w-full max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="max-w-xl">
+
+          <!-- CABEÇALHO -->
+
+          <div class="mb-12">
+
+            <span class=" font-mono text-sm font-bold text-amarelo uppercase tracking-[.18em]">
+              <br>
+              <br>
+              <br>
+              O que nos torna diferentes
+            </span>
+
+            <h2 class="font-display text-4xl sm:text-5xl text-white mt-4 leading-tight">
+              Detalhes que fazem parte do tratamento.
+            </h2>
+
+          </div>
+
+
+          <!-- CARROSSEL -->
+
+          <div class="diff-carousel relative min-h-[230px]">
+
+            <!-- 01 -->
+
+            <div class="diff-slide is-active absolute left-0 top-0">
+
+              <span class="diff-index font-mono text-mint text-sm tracking-[.25em]">
+                01
+              </span>
+
+              <h3 class="font-display text-4xl sm:text-5xl text-amarelo mt-3">
+                Equipe multidisciplinar
+              </h3>
+
+              <p class="text-white/80 text-lg mt-4 max-w-lg leading-relaxed">
+                Especialistas que discutem cada caso em conjunto,
+                evitando diagnósticos isolados.
+              </p>
+
+            </div>
+
+
+            <!-- 02 -->
+
+            <div class="diff-slide absolute left-0 top-0">
+
+              <span class="diff-index font-mono text-mint text-sm tracking-[.25em]">
+                02
+              </span>
+
+              <h3 class="font-display text-4xl sm:text-5xl text-amarelo mt-3">
+                Estrutura moderna
+              </h3>
+
+              <p class="text-white/80 text-lg mt-4 max-w-lg leading-relaxed">
+                Ambiente pensado para o conforto do paciente,
+                do check-in ao consultório.
+              </p>
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="diff-slide absolute left-0 top-0">
+
+              <span class="diff-index font-mono text-mint text-sm tracking-[.25em]">
+                03
+              </span>
+
+              <h3 class="font-display text-4xl sm:text-5xl text-amarelo mt-3">
+                Atendimento 
+              </h3>
+
+              <p class="text-white/80 text-lg mt-4 max-w-lg leading-relaxed">
+                Um atendimento ágil e acolhedor, pensado para tornar sua experiência mais tranquila desde o primeiro contato
+              </p>
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="diff-slide absolute left-0 top-0">
+
+              <span class="diff-index font-mono text-mint text-sm tracking-[.25em]">
+                04
+              </span>
+
+              <h3 class="font-display text-4xl sm:text-5xl text-amarelo mt-3">
+                Convênios e particular
+              </h3>
+
+              <p class="text-white/80 text-lg mt-4 max-w-lg leading-relaxed">
+                Facilitamos seu acesso com os principais convênios
+                da região, além de consultas particulares.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROGRESSO -->
+
+          <div class="flex items-center gap-2 mt-10">
+
+            <span class="diff-dot is-active"></span>
+            <span class="diff-dot"></span>
+            <span class="diff-dot"></span>
+            <span class="diff-dot"></span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+<!-- Divisória inferior -->
+  <div class="absolute bottom-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#8F6B18] via-[#D4AF37] to-[#8F6B18] z-30"></div>
+
+</section>
 
 <!-- ======================================================= -->
 <!-- CONHEÇA A CLÍNICA (galeria)                              -->
@@ -225,7 +565,7 @@
 <section id="clinica" class="py-28 lg:py-36 bg-white">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="max-w-2xl reveal">
-      <span class="eyebrow font-mono text-xs font-bold text-mint uppercase">Nossa estrutura</span>
+      <span class="eyebrow font-mono text-lg font-bold text-mint uppercase">Nossa estrutura</span>
       <h2 class="font-display text-4xl sm:text-5xl text-forest mt-4 leading-tight">
         Conheça a clínica.
       </h2>
@@ -234,39 +574,39 @@
       </p>
     </div>
 
-    <div class="accordion-gallery reveal reveal-1 mt-16">
+    <div class="accordion-gallery mt-16">
 
-      <div class="accordion-item" tabindex="0">
+      <div class="accordion-item reveal reveal-scale reveal-1" tabindex="0">
         <img src="img/clinica-salao.jpg" alt="Salão amplo do Instituto Vivar, com colchonetes e área lúdica" loading="lazy">
         <div class="accordion-overlay"></div>
         <p class="accordion-caption font-display  text-2xl text-white">Salas amplas e aconchegantes</p>
       </div>
 
-      <div class="accordion-item" tabindex="0">
+      <div class="accordion-item reveal reveal-scale reveal-2" tabindex="0">
         <img src="img/clinica-escalada.jpg" alt="Sala lúdica de fisioterapia infantil com parede de escalada" loading="lazy">
         <div class="accordion-overlay"></div>
         <p class="accordion-caption font-display  text-2xl text-white">Espaço lúdico infantil</p>
       </div>
 
-      <div class="accordion-item" tabindex="0">
+      <div class="accordion-item reveal reveal-scale reveal-3" tabindex="0">
         <img src="img/clinica-academia1.jpg" alt="Equipamentos de musculação e reabilitação do Instituto Vivar" loading="lazy">
         <div class="accordion-overlay"></div>
         <p class="accordion-caption font-display  text-2xl text-white">Estrutura completa para reabilitação</p>
       </div>
 
-      <div class="accordion-item" tabindex="0">
+      <div class="accordion-item reveal reveal-scale reveal-4" tabindex="0">
         <img src="img/clinica-consultorio.jpg" alt="Consultório do Instituto Vivar, com parede verde-menta" loading="lazy">
         <div class="accordion-overlay"></div>
         <p class="accordion-caption font-display  text-2xl text-white">Consultórios que acolhem</p>
       </div>
 
-      <div class="accordion-item" tabindex="0">
+      <div class="accordion-item reveal reveal-scale reveal-1" tabindex="0">
         <img src="img/clinica-academia2.jpg" alt="Sala de fisioterapia adulto com bicicleta ergométrica e faixas elásticas" loading="lazy">
         <div class="accordion-overlay"></div>
         <p class="accordion-caption font-display  text-2xl text-white">Ambiente adaptado a cada tratamento</p>
       </div>
 
-      <div class="accordion-item" tabindex="0">
+      <div class="accordion-item reveal reveal-scale reveal-2" tabindex="0">
         <img src="img/clinica-quintal2.jpg" alt="Área externa coberta com brinquedos e trampolim" loading="lazy">
         <div class="accordion-overlay"></div>
         <p class="accordion-caption font-display  text-2xl text-white">Área externa para estimular e brincar</p>
@@ -285,7 +625,7 @@
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
     <div class="max-w-2xl reveal">
-      <span class="eyebrow font-mono text-xs font-bold text-mint uppercase">
+      <span class="eyebrow font-mono text-lg font-bold text-mint uppercase">
         Áreas de atendimento
       </span>
       <h2 class="font-display text-4xl sm:text-5xl mt-4 leading-tight">
@@ -300,7 +640,7 @@
     <div class="service-list mt-16 space-y-8">
 
       <!-- 1 - FISIOTERAPIA INFANTIL -->
-      <div class="service-item flex items-start gap-4 group reveal reveal-1 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
+      <div class="service-item flex items-start gap-4 group reveal reveal-left reveal-1 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
         <div class="flex items-center gap-2">
           <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400"></span>
           <span class="font-bold text-lg ml-2">1</span>
@@ -318,7 +658,7 @@
       </div>
 
       <!-- 2 - FISIOTERAPIA ADULTO -->
-      <div class="service-item flex items-start gap-4 group reveal reveal-2 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
+      <div class="service-item flex items-start gap-4 group reveal reveal-right reveal-2 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
         <div class="flex items-center gap-2">
           <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400"></span>
           <span class="font-bold text-lg ml-2">2</span>
@@ -335,7 +675,7 @@
       </div>
 
       <!-- 3 - PSICOLOGIA INFANTIL -->
-      <div class="service-item flex items-start gap-4 group reveal reveal-3 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
+      <div class="service-item flex items-start gap-4 group reveal reveal-left reveal-3 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
         <div class="flex items-center gap-2">
           <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400"></span>
           <span class="font-bold text-lg ml-2">3</span>
@@ -354,7 +694,7 @@
       </div>
 
       <!-- 4 - OSTEOPATIA -->
-      <div class="service-item flex items-start gap-4 group reveal reveal-1 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
+      <div class="service-item flex items-start gap-4 group reveal reveal-right reveal-1 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
         <div class="flex items-center gap-2">
           <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400"></span>
           <span class="font-bold text-lg ml-2">4</span>
@@ -372,7 +712,7 @@
       </div>
 
       <!-- 5 - PSICOPEDAGOGIA -->
-      <div class="service-item flex items-start gap-4 group reveal reveal-2 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
+      <div class="service-item flex items-start gap-4 group reveal reveal-left reveal-2 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
         <div class="flex items-center gap-2">
           <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400"></span>
           <span class="font-bold text-lg ml-2">5</span>
@@ -393,162 +733,156 @@
   </div>
 </section>
 
-
 <!-- ======================================================= -->
-<!-- DIFERENCIAIS -->
+<!-- LOCALIZAÇÃO / CONTATO                                   -->
 <!-- ======================================================= -->
+<section id="local" class="relative py-28 lg:py-36 bg-azul text-white overflow-hidden">
 
-<section
-  id="diferenciais"
-  class="parallax-band relative py-28 lg:py-36"
-  style="
-    background-image:
-      radial-gradient(
-        circle at 80% 15%,
-        rgba(255,255,255,.25),
-        transparent 45%
-      ),
-      linear-gradient(
-        135deg,
-        #7FC9AE 0%,
-        #A9DCC5 50%,
-        #DCEEE5 100%
-      );
-  "
->
+  <!-- detalhe arquitetônico sutil -->
+  <div class="absolute top-0 right-0 w-72 h-72 border border-white/[0.04] rounded-full translate-x-1/2 -translate-y-1/2"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 border border-white/[0.03] rounded-full -translate-x-1/2 translate-y-1/2"></div>
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
 
+    <!-- cabeçalho discreto -->
+    <div class="flex items-center gap-4 mb-16 reveal">
+      
 
-    <div class="max-w-xl reveal">
+      <div class="h-px w-10 bg-mint/40"></div>
 
-      <span class="eyebrow font-mono text-xs font-bold text-forest uppercase">
-        O que nos torna diferentes
+      <span class="font-mono text-base tracking-[0.2em] uppercase text-white">
+        Localização
       </span>
-
-      <h2 class="font-display text-4xl sm:text-5xl text-forest mt-4 leading-tight">
-        Detalhes que fazem parte do tratamento.
-      </h2>
-
     </div>
 
 
-    <div class="grid sm:grid-cols-2 gap-6 mt-14">
+    <div class="grid lg:grid-cols-12 gap-14 lg:gap-20 items-center">
 
+      <!-- ================================================= -->
+      <!-- INFORMAÇÕES                                       -->
+      <!-- ================================================= -->
+      <div class="lg:col-span-5 reveal reveal-left">
 
-      <!-- EQUIPE MULTIDISCIPLINAR -->
+        <span class="inline-block font-mono text-sm tracking-[0.18em] uppercase text-amarelo mb-5">
+          Laranjal Paulista · SP
+        </span>
 
-      <div class="reveal reveal-1 bg-white/70 backdrop-blur rounded-2xl p-7">
+        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+          Estamos perto de você.
+        </h2>
 
-        <h3 class="font-display text-xl text-forest">
-          Equipe multidisciplinar
-        </h3>
-
-        <p class="text-ink/70 mt-2 text-sm leading-relaxed">
-          Especialistas que discutem cada caso em conjunto, evitando
-          diagnósticos isolados.
+        <p class="text-white/55 text-lg mt-7 max-w-md leading-relaxed">
+          Nossa unidade está localizada em uma região tranquila e
+          de fácil acesso no coração de Laranjal Paulista.
         </p>
+
+
+        <!-- endereço -->
+        <div class="mt-10 pl-5 border-l border-mint/40">
+
+          <span class="block font-mono text-[11px] tracking-[0.18em] uppercase text-white/40 mb-2">
+            Endereço
+          </span>
+
+          <p class="text-white text-lg leading-relaxed">
+            R. Alfredo Barbieri, 92
+            <br>
+            Vila Conceição · Laranjal Paulista
+          </p>
+
+        </div>
+
+
+        <!-- ações -->
+        <div class="flex flex-wrap gap-3 mt-10">
+
+          <a
+            href="https://wa.me/5515997579428?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Instituto%20Vivar%20e%20gostaria%20de%20agendar%20uma%20consulta."
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-3 bg-mint text-forest font-semibold px-6 py-3.5 rounded-full hover:bg-white transition-all duration-300"
+          >
+            <span>Falar no WhatsApp</span>
+            <span class="text-sm">↗</span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/institutovivar_/"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-3 border border-white/15 text-white/80 font-semibold px-6 py-3.5 rounded-full hover:border-mint hover:text-mint transition-all duration-300"
+          >
+            Instagram
+            <span class="text-sm">↗</span>
+          </a>
+
+        </div>
 
       </div>
 
 
-      <!-- ESTRUTURA MODERNA -->
+      <!-- ================================================= -->
+      <!-- MAPA                                              -->
+      <!-- ================================================= -->
+      <div class="lg:col-span-7 reveal reveal-right reveal-2">
 
-      <div class="reveal reveal-2 bg-white/70 backdrop-blur rounded-2xl p-7">
+        <div class="relative">
 
-        <h3 class="font-display text-xl text-forest">
-          Estrutura moderna
-        </h3>
+          <!-- moldura externa -->
+          <div class="absolute -inset-3 border border-white/[0.06] rounded-[2rem] pointer-events-none"></div>
 
-        <p class="text-ink/70 mt-2 text-sm leading-relaxed">
-          Ambiente pensado para o conforto do paciente, do check-in ao
-          consultório.
-        </p>
+          <div class="relative h-[390px] lg:h-[470px] rounded-[1.75rem] overflow-hidden border border-white/10 bg-white/5">
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1813.507772500427!2d-47.83487585787761!3d-23.050235787861922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c66be7e6035b25%3A0x2d1a4a768044d0d0!2sR.%20Alfredo%20Barbieri%2C%2092%20-%20Vila%20Conceicao%2C%20Laranjal%20Paulista%20-%20SP%2C%2018500-000!5e0!3m2!1spt-BR!2sbr!4v1786397199223!5m2!1spt-BR!2sbr"
+              class="w-full h-full grayscale-[20%]"
+              style="border:0;"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização do Instituto Vivar">
+            </iframe>
+
+
+            <!-- etiqueta sobre o mapa -->
+            <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end pointer-events-none">
+
+              <div class="bg-azul/90 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3">
+
+                <span class="block font-mono text-[10px] tracking-[0.18em] uppercase text-mint mb-1">
+                  Nossa unidade
+                </span>
+
+                <span class="text-sm text-white/80">
+                  Vila Conceição
+                </span>
+
+              </div>
+
+              <div class="hidden sm:flex w-10 h-10 rounded-full bg-mint items-center justify-center text-forest font-semibold">
+                ↗
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
-
-
-      <!-- ATENDIMENTO ÁGIL -->
-
-      <div class="reveal reveal-3 bg-white/70 backdrop-blur rounded-2xl p-7">
-
-        <h3 class="font-display text-xl text-forest">
-          Atendimento ágil
-        </h3>
-
-        <p class="text-ink/70 mt-2 text-sm leading-relaxed">
-          Agendamento simples pelo WhatsApp, com retorno rápido da nossa
-          equipe.
-        </p>
-
-      </div>
-
-
-      <!-- CONVÊNIOS E PARTICULAR -->
-
-      <div class="reveal reveal-4 bg-white/70 backdrop-blur rounded-2xl p-7">
-
-        <h3 class="font-display text-xl text-forest">
-          Convênios e particular
-        </h3>
-
-        <p class="text-ink/70 mt-2 text-sm leading-relaxed">
-          Facilitamos seu acesso com os principais convênios da região, além
-          de consultas particulares.
-        </p>
-
-      </div>
-
 
     </div>
 
   </div>
-
 </section>
 
 
-<!-- ======================================================= -->
-<!-- LOCALIZAÇÃO / CONTATO                                    -->
-<!-- ======================================================= -->
-<section id="local" class="py-28 lg:py-36 bg-forest text-white">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
-    <div class="reveal">
-      <span class="eyebrow font-mono text-xs font-bold text-mint uppercase">Localização</span>
-      <h2 class="font-display text-4xl sm:text-5xl mt-4 leading-tight">
-        Estamos no coração de Laranjal Paulista.
-      </h2>
-      <p class="text-white/60 text-lg mt-5 leading-relaxed">
-        R. Alfredo Barbieri, 92 - Vila Conceição.
-      </p>
-
-      <div class="flex flex-wrap gap-4 mt-9">
-        <a href="https://wa.me/5515997579428?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Instituto%20Vivar%20e%20gostaria%20de%20agendar%20uma%20consulta."
-           target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 bg-mint text-forest font-semibold px-7 py-4 rounded-full hover:bg-white transition-colors duration-300">
-          Falar no WhatsApp
-        </a>
-        <a href="https://www.instagram.com/institutovivar_/" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 border border-white/30 text-white font-semibold px-7 py-4 rounded-full hover:border-mint hover:text-mint transition-colors duration-300">
-          Seguir no Instagram
-        </a>
-      </div>
-    </div>
-
-    <div class="reveal reveal-2 rounded-3xl overflow-hidden border border-white/10 h-80 lg:h-96">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1813.507772500427!2d-47.83487585787761!3d-23.050235787861922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c66be7e6035b25%3A0x2d1a4a768044d0d0!2sR.%20Alfredo%20Barbieri%2C%2092%20-%20Vila%20Conceicao%2C%20Laranjal%20Paulista%20-%20SP%2C%2018500-000!5e0!3m2!1spt-BR!2sbr!4v1786397199223!5m2!1spt-BR!2sbr"
-        class="w-full h-full grayscale-[20%]" style="border:0;" allowfullscreen loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade" title="Localização do Instituto Vivar">
-      </iframe>
-    </div>
-  </div>
-</section>
 
 <!-- ======================================================= -->
 <!-- CTA FINAL                                                -->
 <!-- ======================================================= -->
 <section class="py-28 lg:py-36">
-  <div class="max-w-4xl mx-auto px-6 text-center reveal">
+  <div class="max-w-4xl mx-auto px-6 text-center reveal reveal-scale">
     <span class="brand-badge w-14 h-14 mb-7 bg-mintsoft">
       <img src="img/logo.png" alt="" class="h-40 w-50 mx-auto">
     </span>
