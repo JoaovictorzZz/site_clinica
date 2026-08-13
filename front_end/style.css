@@ -1365,7 +1365,7 @@ section[id]{
 }
 #quemsomos .grid > div:hover .brand-badge{
   transform: rotate(-8deg) scale(1.08);
-  background-color: #F0DFC0;
+  background-color: #c0ebf0;
 }
 
 /* ============================================================
@@ -1433,4 +1433,215 @@ section[id]{
   .accordion-overlay,
   .accordion-caption{ opacity: 1 !important; transform: none !important; }
   .accordion-caption{ white-space: normal; }
+}
+
+/* =========================================================
+   FUNDO ANIMADO — LOCALIZAÇÃO
+========================================================= */
+
+.local-animated-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   GRADE DE LINHAS
+========================================================= */
+
+.local-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 56px,
+      rgba(255, 255, 255, 0.085) 57px,
+      rgba(255, 255, 255, 0.085) 58px,
+      transparent 59px
+    ),
+
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 108px,
+      rgba(22, 139, 130, 0.055) 109px,
+      rgba(22, 139, 130, 0.055) 110px,
+      transparent 111px
+    );
+
+  background-size:
+    100% 60px,
+    112px 100%;
+
+  animation:
+    local-grid-move
+    11s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   MOVIMENTO DA GRADE
+========================================================= */
+
+@keyframes local-grid-move {
+
+  0% {
+    background-position:
+      0 0,
+      0 0;
+  }
+
+  100% {
+    background-position:
+      0 60px,
+      112px 0;
+  }
+
+}
+
+
+/* =========================================================
+   LINHA DE LUZ
+========================================================= */
+
+.local-animated-bg::after {
+  content: "";
+
+  position: absolute;
+
+  top: -25%;
+  left: -30%;
+
+  width: 28%;
+  height: 150%;
+
+  pointer-events: none;
+
+  
+
+  transform: rotate(12deg);
+
+  filter: blur(5px);
+
+  animation:
+    local-light-pass
+    10s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes local-light-pass {
+
+  0% {
+    left: -35%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.9;
+  }
+
+  70% {
+    opacity: 0.65;
+  }
+
+  100% {
+    left: 115%;
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   SEGUNDA LINHA DE LUZ
+========================================================= */
+
+.local-animated-bg::before {
+  content: "";
+
+  position: absolute;
+
+  top: 15%;
+  left: -20%;
+
+  width: 18%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(2, 225, 246, 0.45),
+    rgba(22, 139, 130, 0.5),
+    transparent
+  );
+
+  box-shadow:
+    0 0 14px rgba(22, 139, 130, 0.25);
+
+  animation:
+    local-line-pass
+    8s
+    linear
+    infinite;
+}
+
+
+@keyframes local-line-pass {
+
+  0% {
+    left: -20%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   CONTEÚDO ACIMA DO EFEITO
+========================================================= */
+
+.local-animated-bg > .max-w-7xl {
+  position: relative;
+  z-index: 10;
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .local-lines,
+  .local-animated-bg::before,
+  .local-animated-bg::after {
+    animation: none;
+  }
+
 }
