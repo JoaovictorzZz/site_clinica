@@ -15,9 +15,10 @@ amarelo{
 .care-card {
   min-height: 470px;
   padding: 42px;
+  
 
   border-radius: 32px;
- background: #70ac9d62;
+ background: #03ac8261;
 
   border: 1px solid rgba(14, 75, 68, .10);
 
@@ -79,7 +80,7 @@ amarelo{
   width: 180px;
   height: 180px;
 
-  background: rgba(127, 201, 174, .22);
+  background: rgba(127, 201, 174, 0.959);
 
   right: -50px;
   top: -40px;
@@ -154,7 +155,7 @@ amarelo{
 
   font-family: monospace;
 
-  font-size: .72rem;
+  font-size: 20px;
 
   line-height: 1.4;
 
@@ -162,7 +163,7 @@ amarelo{
 
   letter-spacing: .12em;
 
-  color: rgba(14,75,68,.55);
+  color: rgba(6, 36, 54, 0.79);
 
   padding-bottom: 5px;
 }
@@ -197,7 +198,7 @@ amarelo{
 
   width: 25%;
 
-  background: #D4AF37;
+  background: #035636;
 
   transition:
     width 1s cubic-bezier(.22,1,.36,1);
@@ -230,6 +231,7 @@ amarelo{
 
 .care-point-1 {
   left: 0;
+  
 }
 
 .care-point-2 {
@@ -264,8 +266,7 @@ amarelo{
 
 .care-stage {
 
-  position: relative;
-
+  position: relative; 
   min-height: 120px;
 
   margin-top: 38px;
@@ -302,7 +303,7 @@ amarelo{
 
   font-family: monospace;
 
-  font-size: .7rem;
+  font-size: 20px;
 
   letter-spacing: .18em;
 
@@ -329,7 +330,7 @@ amarelo{
 
   margin-top: 10px;
 
-  color: rgba(14,75,68,.58);
+  color: rgb(3, 61, 54);
 
   font-size: .95rem;
 
@@ -1644,4 +1645,33 @@ section[id]{
     animation: none;
   }
 
+}
+
+/* ============================================================
+   OTIMIZAÇÕES DE PERFORMANCE (adicionado — nenhuma classe
+   existente foi removida ou alterada acima)
+   ============================================================ */
+
+/* content-visibility: adia o trabalho de layout/paint de seções
+   que ainda não entraram na tela, acelerando o carregamento inicial.
+   contain-intrinsic-size evita "pulos" de layout ao entrarem na viewport. */
+#clinica,
+#areas,
+#local {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1200px;
+}
+
+/* Vídeo de fundo: garante que ele nunca force reflow/overflow
+   e sempre cubra o container de forma otimizada pelo compositor */
+#diferenciais video {
+  will-change: opacity;
+}
+
+/* Reduz custo de composição das animações de fundo ao avisar
+   o navegador com antecedência sobre o que vai mudar */
+.quote-orb,
+.care-orb,
+.ps4-shape {
+  will-change: transform, opacity;
 }

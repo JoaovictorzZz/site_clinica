@@ -3,14 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instituto Vivar </title>
+<title>Instituto Vivar</title>
 <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 <meta name="description" content="Instituto Vivar: fisioterapia infantil e adulto, psicologia infantil, osteopatia e psicopedagogia. Cuidado interdisciplinar e humanizado em Laranjal Paulista/SP.">
 
-<!-- Fonts -->
+<!-- Preconnects (feitos o mais cedo possível para acelerar DNS/TLS) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.tailwindcss.com">
+
+<!-- Preload de recursos críticos acima da dobra (logo e vídeo poster) -->
+<link rel="preload" as="image" href="img/logo.png">
+<link rel="preload" as="image" href="img/diferenciais-poster.jpg">
+
+<!-- CSS próprio primeiro (evita bloqueio desnecessário depois do Tailwind) -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- Tailwind (Play CDN) -->
@@ -48,10 +57,10 @@
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="flex items-center justify-between h-20">
       <a href="#topo" class="flex items-center gap-3">
-        <img src="img/logo.png" alt="Instituto Vivar" class="h-10 w-auto rounded-full bg-white border-2 border-green-200 m-5">
+        <img src="img/logo.png" alt="Instituto Vivar" class="h-10 w-auto rounded-full bg-white border-2 border-green-200 m-5" width="40" height="40" fetchpriority="high" decoding="async">
       </a>
 
-      <nav class="hidden md:flex items-center gap-10 font-body text-sm font-semibold tracking-wide">
+      <nav class="hidden md:flex items-center gap-10 font-body text-sm font-semibold tracking-wide" aria-label="Navegação principal">
         <a href="#quemsomos" class="nav-link hover:text-mint transition-colors">Quem somos</a>
         <a href="#clinica" class="nav-link hover:text-mint transition-colors">A clínica</a>
         <a href="#areas" class="nav-link hover:text-mint transition-colors">Áreas de atendimento</a>
@@ -62,18 +71,18 @@
       <a href="https://wa.me/5515997579428?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Instituto%20Vivar%20e%20gostaria%20de%20agendar%20uma%20consulta."
          target="_blank" rel="noopener"
          class="hidden md:inline-flex items-center gap-2 bg-forest hover:bg-mint hover:text-forest text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.93 2.46a8.3 8.3 0 0 1 2.45 5.92c0 4.62-3.76 8.38-8.38 8.38a8.3 8.3 0 0 1-4.24-1.16l-.3-.18-3.14.82.84-3.06-.2-.32a8.28 8.28 0 0 1-1.27-4.4c0-4.62 3.76-8.46 8.31-8.46m-4.6 4.8c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.7 4.19 3.7 2.07.83 2.49.66 2.94.63.45-.04 1.45-.6 1.66-1.17.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.47"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.93 2.46a8.3 8.3 0 0 1 2.45 5.92c0 4.62-3.76 8.38-8.38 8.38a8.3 8.3 0 0 1-4.24-1.16l-.3-.18-3.14.82.84-3.06-.2-.32a8.28 8.28 0 0 1-1.27-4.4c0-4.62 3.76-8.46 8.31-8.46m-4.6 4.8c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.7 4.19 3.7 2.07.83 2.49.66 2.94.63.45-.04 1.45-.6 1.66-1.17.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.47"/></svg>
         Agendar consulta
       </a>
 
-      <button id="menuBtn" class="md:hidden text-ink" aria-label="Abrir menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <button id="menuBtn" class="md:hidden text-ink" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
 
   <!-- menu mobile -->
-  <div id="mobileMenu" class="hidden md:hidden bg-sand border-t border-forest/10">
+  <nav id="mobileMenu" class="hidden md:hidden bg-sand border-t border-forest/10" aria-label="Navegação mobile">
     <div class="px-6 py-6 flex flex-col gap-5 font-semibold">
       <a href="#quemsomos" class="mob-link">Quem somos</a>
       <a href="#clinica" class="mob-link">A clínica</a>
@@ -86,18 +95,20 @@
         Agendar pelo WhatsApp
       </a>
     </div>
-  </div>
+  </nav>
 </header>
+
+<main>
 
 <!-- ======================================================= -->
 <!-- HERO                                                     -->
 <!-- ======================================================= -->
-<section class="relative overflow-hidden pt-40 pb-28 lg:pt-48 lg:pb-36">
+<section class="relative overflow-hidden pt-40 pb-28 lg:pt-48 lg:pb-36" aria-labelledby="hero-title">
   <!-- marca d'água do símbolo real da marca -->
   <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-end relative">
     <div class="lg:col-span-7 reveal is-visible">
       <span class="eyebrow font-mono text-base font-bold text-forest/70 uppercase"><strong>Fisioterapia · Psicologia · Osteopatia · Psicopedagogia</strong></span>
-      <h1 class="font-display text-[2.6rem] leading-[1.08] sm:text-6xl lg:text-[4.2rem] text-forest mt-5 tracking-tight">
+      <h1 id="hero-title" class="font-display text-[2.6rem] leading-[1.08] sm:text-6xl lg:text-[4.2rem] text-forest mt-5 tracking-tight">
         Especialistas unidos por um só objetivo:<br class="hidden lg:block">
         <span class="text-mint">devolver sua</span> qualidade de vida.
       </h1>
@@ -112,7 +123,7 @@
            target="_blank" rel="noopener"
            class="inline-flex items-center gap-2 bg-forest text-white font-semibold px-7 py-4 rounded-full hover:bg-mint hover:text-forest transition-colors duration-300">
           Agendar consulta agora
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <a href="#areas" class="inline-flex items-center gap-2 text-forest font-semibold px-2 py-4 hover:text-mint transition-colors">
           Ver áreas de atendimento
@@ -122,24 +133,24 @@
 
     <div class="lg:col-span-5 reveal reveal-right reveal-2 is-visible">
 
-  <div class="care-card relative overflow-hidden">
+  <article class="care-card relative overflow-hidden" aria-label="Nosso cuidado em cada fase da vida">
 
     <!-- elementos decorativos -->
-    <div class="care-orb care-orb-1"></div>
-    <div class="care-orb care-orb-2"></div>
+    <div class="care-orb care-orb-1" aria-hidden="true"></div>
+    <div class="care-orb care-orb-2" aria-hidden="true"></div>
 
-    <div class="care-grid"></div>
+    <div class="care-grid" aria-hidden="true"></div>
 
     <!-- conteúdo -->
     <div class="relative z-10">
 
       <div class="flex items-center justify-between">
 
-        <p class="font-mono text-xs uppercase tracking-[.2em] text-forest">
+        <p class="font-mono text-base uppercase tracking-[.2em] text-black">
           Nosso cuidado
         </p>
 
-        <span class="care-counter font-mono text-xs text-forest/50">
+        <span class="care-counter font-mono text-base text-forest">
           01 / 04
         </span>
 
@@ -164,7 +175,7 @@
 
       <!-- linha -->
 
-      <div class="care-line">
+      <div class="care-line" aria-hidden="true">
 
         <span class="care-line-progress"></span>
 
@@ -244,9 +255,9 @@
 
       <div class="mt-8 flex items-center gap-3">
 
-        <span class="care-pulse"></span>
+        <span class="care-pulse" aria-hidden="true"></span>
 
-        <span class="font-mono text-xs uppercase tracking-[.15em] text-forest/60">
+        <span class="font-mono text-xs uppercase tracking-[.15em] text-black">
           Um só time em cada fase da vida
         </span>
 
@@ -254,7 +265,7 @@
 
     </div>
 
-  </div>
+  </article>
 
 </div>
   </div>
@@ -267,6 +278,7 @@
 
 <section
   class="quote-section relative overflow-hidden py-28 lg:py-32"
+  aria-label="Nossa filosofia de cuidado"
 >
 <div class="ps4-elements" aria-hidden="true">
 
@@ -283,27 +295,27 @@
 
   <!-- FUNDO ANIMADO -->
 
-  <div class="quote-bg absolute inset-0"></div>
+  <div class="quote-bg absolute inset-0" aria-hidden="true"></div>
 
   <!-- Luzes flutuantes -->
 
-  <div class="quote-orb quote-orb-1"></div>
-  <div class="quote-orb quote-orb-2"></div>
-  <div class="quote-orb quote-orb-3"></div>
+  <div class="quote-orb quote-orb-1" aria-hidden="true"></div>
+  <div class="quote-orb quote-orb-2" aria-hidden="true"></div>
+  <div class="quote-orb quote-orb-3" aria-hidden="true"></div>
 
 
   <!-- GRID SUTIL -->
 
-  <div class="quote-grid absolute inset-0"></div>
+  <div class="quote-grid absolute inset-0" aria-hidden="true"></div>
 
 
   <!-- CONTEÚDO -->
 
   <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
-    <div class="quote-content">
+    <blockquote class="quote-content">
 
-      <span class="quote-symbol">
+      <span class="quote-symbol" aria-hidden="true">
         “
       </span>
 
@@ -319,9 +331,9 @@
 
       </p>
 
-      <div class="quote-line"></div>
+      <div class="quote-line" aria-hidden="true"></div>
 
-    </div>
+    </blockquote>
 
   </div>
 
@@ -330,12 +342,12 @@
 <!-- ======================================================= -->
 <!-- QUEM SOMOS                                               -->
 <!-- ======================================================= -->
-<section id="quemsomos" class="py-28 lg:py-36">
+<section id="quemsomos" class="py-28 lg:py-36" aria-labelledby="quemsomos-title">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="grid lg:grid-cols-12 gap-14 items-start">
       <div class="lg:col-span-5 reveal reveal-left">
         <span class="eyebrow font-mono text-lg font-bold text-mint uppercase">Quem somos</span>
-        <h2 class="font-display text-4xl sm:text-5xl text-forest mt-4 leading-tight">
+        <h2 id="quemsomos-title" class="font-display text-4xl sm:text-5xl text-forest mt-4 leading-tight">
           Um instituto interdisciplinar, feito de acolhimento.
         </h2>
       </div>
@@ -351,9 +363,9 @@
 
     <!-- Missão · Visão · Valores em cards -->
     <div class="grid md:grid-cols-3 gap-6 mt-16">
-      <div class="reveal reveal-left reveal-1 bg-white border border-forest/10 rounded-2xl p-8 transition-colors">
+      <article class="reveal reveal-left reveal-1 bg-white border border-forest/10 rounded-2xl p-8 transition-colors">
         <span class="brand-badge w-11 h-11 mb-6 bg-mintsoft">
-          <img src="img/mission.png" alt="" class="w-6 h-6">
+          <img src="img/mission.png" alt="" class="w-6 h-6" width="24" height="24" loading="lazy" decoding="async">
         </span>
         <h3 class="font-display text-3xl text-forest">Missão</h3>
         <p class="text-black mt-3 text-base leading-relaxed">
@@ -361,11 +373,11 @@
           sinta vista, compreendida e acompanhada de forma única — com uma equipe
           integrada que alia conhecimento técnico, sensibilidade e empatia.
         </p>
-      </div>
+      </article>
 
-      <div class="reveal reveal-2 bg-white border border-forest/10 rounded-2xl p-8 transition-colors">
+      <article class="reveal reveal-2 bg-white border border-forest/10 rounded-2xl p-8 transition-colors">
         <span class="brand-badge w-11 h-11 mb-6 bg-mintsoft">
-          <img src="img/binoculars.png" alt="" class="w-6 h-6">
+          <img src="img/binoculars.png" alt="" class="w-6 h-6" width="24" height="24" loading="lazy" decoding="async">
         </span>
         <h3 class="font-display text-3xl text-forest">Visão</h3>
         <p class="text-black mt-3 text-base leading-relaxed">
@@ -373,37 +385,37 @@
           por promover o desenvolvimento integral e o bem-estar de cada indivíduo
           — um espaço acolhedor e transformador em todas as fases da vida.
         </p>
-      </div>
-      <div class="reveal reveal-2 bg-white border border-forest/10 rounded-2xl p-8 transition-colors">
+      </article>
+      <article class="reveal reveal-2 bg-white border border-forest/10 rounded-2xl p-8 transition-colors">
         <span class="brand-badge w-11 h-11 mb-6">
-          <img src="img/bars.png" alt="" class="w-6 h-6">
+          <img src="img/bars.png" alt="" class="w-6 h-6" width="24" height="24" loading="lazy" decoding="async">
         </span>
         <h3 class="font-display text-3xl">Valores</h3>
-        <div class="flex flex-wrap gap-2 mt-4">
-          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Amor</span>
-          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Alegria</span>
-          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Transparência</span>
-          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Conhecimento</span>
-          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Comprometimento</span>
-          <span class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Empatia</span>
-        </div>
+        <ul class="flex flex-wrap gap-2 mt-4">
+          <li class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Amor</li>
+          <li class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Alegria</li>
+          <li class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Transparência</li>
+          <li class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Conhecimento</li>
+          <li class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Comprometimento</li>
+          <li class="text-xs font-semibold bg-black/10 border border-white/15 rounded-full px-3 py-1.5">Empatia</li>
+        </ul>
         <p class="text-black mt-5 text-base leading-relaxed">
           Guiamos cada atendimento com afeto genuíno, transparência e busca
           constante por conhecimento — comprometidos com a jornada de cada
           paciente e sua família.
         </p>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 <!-- DIFERENCIAIS — terreno pronto para vídeo de fundo        -->
 <!-- ======================================================= -->
 
- 
-<section id="diferenciais" class="relative bg-forest h-[200vh]">
+
+<section id="diferenciais" class="relative bg-forest h-[200vh]" aria-label="O que nos torna diferentes">
 
   <!-- Divisória superior -->
-<div class="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#8F6B18] via-[#D4AF37] to-[#8F6B18] z-30"></div>
+<div class="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#8F6B18] via-[#D4AF37] to-[#8F6B18] z-30" aria-hidden="true"></div>
 
   <div class="diff-pin sticky top-0 h-screen overflow-hidden">
 
@@ -414,16 +426,18 @@
       muted
       loop
       playsinline
+      preload="metadata"
       poster="img/diferenciais-poster.jpg"
+      aria-hidden="true"
     >
       <source src="video/video_clinica.mp4" type="video/mp4">
     </video>
 
 
     <!-- Overlay bem mais leve -->
-    <div class="absolute inset-0 bg-gradient-to-r from-forest/90 via-forest/35 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-forest/90 via-forest/35 to-transparent" aria-hidden="true"></div>
 
-    <div class="absolute inset-0 bg-forest/5"></div>
+    <div class="absolute inset-0 bg-forest/5" aria-hidden="true"></div>
 
 
     <!-- CONTEÚDO -->
@@ -457,7 +471,7 @@
 
             <!-- 01 -->
 
-            <div class="diff-slide is-active absolute left-0 top-0">
+            <article class="diff-slide is-active absolute left-0 top-0">
 
               <span class="diff-index font-mono text-mint text-sm tracking-[.25em]">
                 01
@@ -472,12 +486,12 @@
                 evitando diagnósticos isolados.
               </p>
 
-            </div>
+            </article>
 
 
             <!-- 02 -->
 
-            <div class="diff-slide absolute left-0 top-0">
+            <article class="diff-slide absolute left-0 top-0">
 
               <span class="diff-index font-mono text-mint text-sm tracking-[.25em]">
                 02
@@ -492,31 +506,31 @@
                 do check-in ao consultório.
               </p>
 
-            </div>
+            </article>
 
 
             <!-- 03 -->
 
-            <div class="diff-slide absolute left-0 top-0">
+            <article class="diff-slide absolute left-0 top-0">
 
               <span class="diff-index font-mono text-mint text-sm tracking-[.25em]">
                 03
               </span>
 
               <h3 class="font-display text-4xl sm:text-5xl text-amarelo mt-3">
-                Atendimento 
+                Atendimento
               </h3>
 
               <p class="text-white/80 text-lg mt-4 max-w-lg leading-relaxed">
                 Um atendimento ágil e acolhedor, pensado para tornar sua experiência mais tranquila desde o primeiro contato
               </p>
 
-            </div>
+            </article>
 
 
             <!-- 04 -->
 
-            <div class="diff-slide absolute left-0 top-0">
+            <article class="diff-slide absolute left-0 top-0">
 
               <span class="diff-index font-mono text-mint text-sm tracking-[.25em]">
                 04
@@ -531,14 +545,14 @@
                 da região, além de consultas particulares.
               </p>
 
-            </div>
+            </article>
 
           </div>
 
 
           <!-- PROGRESSO -->
 
-          <div class="flex items-center gap-2 mt-10">
+          <div class="flex items-center gap-2 mt-10" aria-hidden="true">
 
             <span class="diff-dot is-active"></span>
             <span class="diff-dot"></span>
@@ -555,18 +569,18 @@
 
   </div>
 <!-- Divisória inferior -->
-  <div class="absolute bottom-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#8F6B18] via-[#D4AF37] to-[#8F6B18] z-30"></div>
+  <div class="absolute bottom-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#8F6B18] via-[#D4AF37] to-[#8F6B18] z-30" aria-hidden="true"></div>
 
 </section>
 
 <!-- ======================================================= -->
 <!-- CONHEÇA A CLÍNICA (galeria)                              -->
 <!-- ======================================================= -->
-<section id="clinica" class="py-28 lg:py-36 bg-white">
+<section id="clinica" class="py-28 lg:py-36 bg-white" aria-labelledby="clinica-title">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="max-w-2xl reveal">
       <span class="eyebrow font-mono text-lg font-bold text-mint uppercase">Nossa estrutura</span>
-      <h2 class="font-display text-4xl sm:text-5xl text-forest mt-4 leading-tight">
+      <h2 id="clinica-title" class="font-display text-4xl sm:text-5xl text-forest mt-4 leading-tight">
         Conheça a clínica.
       </h2>
       <p class="text-ink/60 text-lg mt-5">
@@ -576,41 +590,41 @@
 
     <div class="accordion-gallery mt-16">
 
-      <div class="accordion-item reveal reveal-scale reveal-1" tabindex="0">
-        <img src="img/clinica-salao.jpg" alt="Salão amplo do Instituto Vivar, com colchonetes e área lúdica" loading="lazy">
-        <div class="accordion-overlay"></div>
-        <p class="accordion-caption font-display  text-2xl text-white">Salas amplas e aconchegantes</p>
-      </div>
+      <figure class="accordion-item reveal reveal-scale reveal-1" tabindex="0">
+        <img src="img/clinica-salao.jpg" alt="Salão amplo do Instituto Vivar, com colchonetes e área lúdica" loading="lazy" decoding="async">
+        <div class="accordion-overlay" aria-hidden="true"></div>
+        <figcaption class="accordion-caption font-display  text-2xl text-white">Salas amplas e aconchegantes</figcaption>
+      </figure>
 
-      <div class="accordion-item reveal reveal-scale reveal-2" tabindex="0">
-        <img src="img/clinica-escalada.jpg" alt="Sala lúdica de fisioterapia infantil com parede de escalada" loading="lazy">
-        <div class="accordion-overlay"></div>
-        <p class="accordion-caption font-display  text-2xl text-white">Espaço lúdico infantil</p>
-      </div>
+      <figure class="accordion-item reveal reveal-scale reveal-2" tabindex="0">
+        <img src="img/clinica-escalada.jpg" alt="Sala lúdica de fisioterapia infantil com parede de escalada" loading="lazy" decoding="async">
+        <div class="accordion-overlay" aria-hidden="true"></div>
+        <figcaption class="accordion-caption font-display  text-2xl text-white">Espaço lúdico infantil</figcaption>
+      </figure>
 
-      <div class="accordion-item reveal reveal-scale reveal-3" tabindex="0">
-        <img src="img/clinica-academia1.jpg" alt="Equipamentos de musculação e reabilitação do Instituto Vivar" loading="lazy">
-        <div class="accordion-overlay"></div>
-        <p class="accordion-caption font-display  text-2xl text-white">Estrutura completa para reabilitação</p>
-      </div>
+      <figure class="accordion-item reveal reveal-scale reveal-3" tabindex="0">
+        <img src="img/clinica-academia1.jpg" alt="Equipamentos de musculação e reabilitação do Instituto Vivar" loading="lazy" decoding="async">
+        <div class="accordion-overlay" aria-hidden="true"></div>
+        <figcaption class="accordion-caption font-display  text-2xl text-white">Estrutura completa para reabilitação</figcaption>
+      </figure>
 
-      <div class="accordion-item reveal reveal-scale reveal-4" tabindex="0">
-        <img src="img/clinica-consultorio.jpg" alt="Consultório do Instituto Vivar, com parede verde-menta" loading="lazy">
-        <div class="accordion-overlay"></div>
-        <p class="accordion-caption font-display  text-2xl text-white">Consultórios que acolhem</p>
-      </div>
+      <figure class="accordion-item reveal reveal-scale reveal-4" tabindex="0">
+        <img src="img/clinica-consultorio.jpg" alt="Consultório do Instituto Vivar, com parede verde-menta" loading="lazy" decoding="async">
+        <div class="accordion-overlay" aria-hidden="true"></div>
+        <figcaption class="accordion-caption font-display  text-2xl text-white">Consultórios que acolhem</figcaption>
+      </figure>
 
-      <div class="accordion-item reveal reveal-scale reveal-1" tabindex="0">
-        <img src="img/clinica-academia2.jpg" alt="Sala de fisioterapia adulto com bicicleta ergométrica e faixas elásticas" loading="lazy">
-        <div class="accordion-overlay"></div>
-        <p class="accordion-caption font-display  text-2xl text-white">Ambiente adaptado a cada tratamento</p>
-      </div>
+      <figure class="accordion-item reveal reveal-scale reveal-1" tabindex="0">
+        <img src="img/clinica-academia2.jpg" alt="Sala de fisioterapia adulto com bicicleta ergométrica e faixas elásticas" loading="lazy" decoding="async">
+        <div class="accordion-overlay" aria-hidden="true"></div>
+        <figcaption class="accordion-caption font-display  text-2xl text-white">Ambiente adaptado a cada tratamento</figcaption>
+      </figure>
 
-      <div class="accordion-item reveal reveal-scale reveal-2" tabindex="0">
-        <img src="img/clinica-quintal2.jpg" alt="Área externa coberta com brinquedos e trampolim" loading="lazy">
-        <div class="accordion-overlay"></div>
-        <p class="accordion-caption font-display  text-2xl text-white">Área externa para estimular e brincar</p>
-      </div>
+      <figure class="accordion-item reveal reveal-scale reveal-2" tabindex="0">
+        <img src="img/clinica-quintal2.jpg" alt="Área externa coberta com brinquedos e trampolim" loading="lazy" decoding="async">
+        <div class="accordion-overlay" aria-hidden="true"></div>
+        <figcaption class="accordion-caption font-display  text-2xl text-white">Área externa para estimular e brincar</figcaption>
+      </figure>
 
     </div>
   </div>
@@ -621,14 +635,14 @@
 <!-- ======================================================= -->
 <!-- ÁREAS DE ATENDIMENTO -->
 <!-- ======================================================= -->
- <section id="areas" class="py-28 lg:py-36 bg-forest text-white">
+ <section id="areas" class="py-28 lg:py-36 bg-forest text-white" aria-labelledby="areas-title">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
     <div class="max-w-2xl reveal">
       <span class="eyebrow font-mono text-lg font-bold text-mint uppercase">
         Áreas de atendimento
       </span>
-      <h2 class="font-display text-4xl sm:text-5xl mt-4 leading-tight">
+      <h2 id="areas-title" class="font-display text-4xl sm:text-5xl mt-4 leading-tight">
         Tudo o que você precisa, em um só lugar.
       </h2>
       <p class="text-white/60 text-lg mt-5">
@@ -637,12 +651,12 @@
     </div>
 
     <!-- Lista de serviços -->
-    <div class="service-list mt-16 space-y-8">
+    <ol class="service-list mt-16 space-y-8">
 
       <!-- 1 - FISIOTERAPIA INFANTIL -->
-      <div class="service-item flex items-start gap-4 group reveal reveal-left reveal-1 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
+      <li class="service-item flex items-start gap-4 group reveal reveal-left reveal-1 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
         <div class="flex items-center gap-2">
-          <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400"></span>
+          <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400" aria-hidden="true"></span>
           <span class="font-bold text-lg ml-2">1</span>
         </div>
         <div class="flex-1">
@@ -654,13 +668,13 @@
             respiratória.
           </p>
         </div>
-        <span class="service-arrow ml-auto text-xl">→</span>
-      </div>
+        <span class="service-arrow ml-auto text-xl" aria-hidden="true">→</span>
+      </li>
 
       <!-- 2 - FISIOTERAPIA ADULTO -->
-      <div class="service-item flex items-start gap-4 group reveal reveal-right reveal-2 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
+      <li class="service-item flex items-start gap-4 group reveal reveal-right reveal-2 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
         <div class="flex items-center gap-2">
-          <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400"></span>
+          <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400" aria-hidden="true"></span>
           <span class="font-bold text-lg ml-2">2</span>
         </div>
         <div class="flex-1">
@@ -671,13 +685,13 @@
             individualizado de acordo com cada necessidade.
           </p>
         </div>
-        <span class="service-arrow ml-auto text-xl">→</span>
-      </div>
+        <span class="service-arrow ml-auto text-xl" aria-hidden="true">→</span>
+      </li>
 
       <!-- 3 - PSICOLOGIA INFANTIL -->
-      <div class="service-item flex items-start gap-4 group reveal reveal-left reveal-3 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
+      <li class="service-item flex items-start gap-4 group reveal reveal-left reveal-3 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
         <div class="flex items-center gap-2">
-          <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400"></span>
+          <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400" aria-hidden="true"></span>
           <span class="font-bold text-lg ml-2">3</span>
         </div>
         <div class="flex-1">
@@ -690,13 +704,13 @@
             indicada.
           </p>
         </div>
-        <span class="service-arrow ml-auto text-xl">→</span>
-      </div>
+        <span class="service-arrow ml-auto text-xl" aria-hidden="true">→</span>
+      </li>
 
       <!-- 4 - OSTEOPATIA -->
-      <div class="service-item flex items-start gap-4 group reveal reveal-right reveal-1 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
+      <li class="service-item flex items-start gap-4 group reveal reveal-right reveal-1 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
         <div class="flex items-center gap-2">
-          <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400"></span>
+          <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400" aria-hidden="true"></span>
           <span class="font-bold text-lg ml-2">4</span>
         </div>
         <div class="flex-1">
@@ -708,13 +722,13 @@
             desconfortos corporais.
           </p>
         </div>
-        <span class="service-arrow ml-auto text-xl">→</span>
-      </div>
+        <span class="service-arrow ml-auto text-xl" aria-hidden="true">→</span>
+      </li>
 
       <!-- 5 - PSICOPEDAGOGIA -->
-      <div class="service-item flex items-start gap-4 group reveal reveal-left reveal-2 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
+      <li class="service-item flex items-start gap-4 group reveal reveal-left reveal-2 transform transition duration-300 hover:scale-[1.02] border-b border-white/20 pb-6">
         <div class="flex items-center gap-2">
-          <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400"></span>
+          <span class="w-6 h-6 bg-yellow-100 rotate-45 transition-transform duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:bg-green-300 group-hover:border group-hover:border-green-400" aria-hidden="true"></span>
           <span class="font-bold text-lg ml-2">5</span>
         </div>
         <div class="flex-1">
@@ -726,10 +740,10 @@
             de aprendizagem.
           </p>
         </div>
-        <span class="service-arrow ml-auto text-xl">→</span>
-      </div>
+        <span class="service-arrow ml-auto text-xl" aria-hidden="true">→</span>
+      </li>
 
-    </div>
+    </ol>
   </div>
 </section>
 
@@ -739,10 +753,11 @@
 <section
   id="local"
   class="local-animated-bg relative py-28 lg:py-36 bg-azul text-white overflow-hidden"
+  aria-labelledby="local-title"
 >
 
   <!-- camada animada do fundo -->
-  <div class="local-lines"></div>
+  <div class="local-lines" aria-hidden="true"></div>
 
   <!-- detalhe arquitetônico sutil -->
   <div
@@ -753,6 +768,7 @@
            translate-x-1/2
            -translate-y-1/2
            pointer-events-none"
+    aria-hidden="true"
   ></div>
 
   <div
@@ -763,6 +779,7 @@
            -translate-x-1/2
            translate-y-1/2
            pointer-events-none"
+    aria-hidden="true"
   ></div>
 
 
@@ -771,7 +788,7 @@
     <!-- cabeçalho -->
     <div class="flex items-center gap-4 mb-16 reveal">
 
-      <div class="h-px w-10 bg-mint/40"></div>
+      <div class="h-px w-10 bg-mint/40" aria-hidden="true"></div>
 
       <span
         class="font-mono text-base
@@ -805,6 +822,7 @@
         </span>
 
         <h2
+          id="local-title"
           class="font-display
                  text-4xl
                  sm:text-5xl
@@ -827,7 +845,7 @@
 
 
         <!-- endereço -->
-        <div class="mt-10 pl-5 border-l border-mint/40">
+        <address class="mt-10 pl-5 border-l border-mint/40 not-italic">
 
           <span
             class="block
@@ -846,7 +864,7 @@
             Vila Conceição · Laranjal Paulista
           </p>
 
-        </div>
+        </address>
 
 
         <!-- ações -->
@@ -869,7 +887,7 @@
                    duration-300"
           >
             <span>Falar no WhatsApp</span>
-            <span class="text-sm">↗</span>
+            <span class="text-sm" aria-hidden="true">↗</span>
           </a>
 
 
@@ -892,7 +910,7 @@
                    duration-300"
           >
             Instagram
-            <span class="text-sm">↗</span>
+            <span class="text-sm" aria-hidden="true">↗</span>
           </a>
 
         </div>
@@ -920,6 +938,7 @@
                    border-white/[0.06]
                    rounded-[2rem]
                    pointer-events-none"
+            aria-hidden="true"
           ></div>
 
 
@@ -992,6 +1011,7 @@
                        justify-center
                        text-forest
                        font-semibold"
+                aria-hidden="true"
               >
                 ↗
               </div>
@@ -1009,16 +1029,60 @@
   </div>
 
 </section>
+<!-- ======================================================= -->
+<!-- AVALIÇÕES                                                -->
+<!-- ======================================================= -->
+
+<section id="avaliacoes" class="py-24 bg-gray-50">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <!-- título -->
+    <h2 class="text-4xl font-display text-green-900 mb-12">
+      O que nossos pacientes dizem
+    </h2>
+
+    <!-- formulário -->
+    <form id="reviewForm" class="bg-white p-10 rounded-2xl shadow-lg border border-green-100">
+      <!-- estrelas -->
+      <div id="stars" class="flex justify-center mb-8 text-5xl text-gray-300 cursor-pointer space-x-2">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+
+      <!-- campos -->
+      <input type="text" id="name" placeholder="Seu nome"
+             class="hidden w-full p-4 mb-4 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" />
+
+      <textarea id="comment" placeholder="Conte sobre sua experiência"
+                class="hidden w-full p-4 mb-6 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
+
+      <!-- botão -->
+      <div class="flex justify-center">
+        <button type="submit"
+                class="bg-green-900 text-white px-10 py-4 rounded-lg font-semibold text-lg shadow-md hover:bg-green-700 transition">
+          Enviar avaliação
+        </button>
+      </div>
+    </form>
+
+    <!-- avaliações -->
+    <div id="reviews" class="mt-16 space-y-8">
+      <!-- Cards de avaliações aparecerão aqui -->
+    </div>
+  </div>
+</section>
 
 
 
 <!-- ======================================================= -->
 <!-- CTA FINAL                                                -->
 <!-- ======================================================= -->
-<section class="py-28 lg:py-36">
+<section class="py-28 lg:py-36" aria-label="Agende sua consulta">
   <div class="max-w-4xl mx-auto px-6 text-center reveal reveal-scale">
     <span class="brand-badge w-14 h-14 mb-7 bg-mintsoft">
-      <img src="img/logo.png" alt="" class="h-40 w-50 mx-auto">
+      <img src="img/logo.png" alt="" class="h-40 w-50 mx-auto" width="200" height="160" loading="lazy" decoding="async">
     </span>
     <h2 class="font-display text-4xl sm:text-5xl text-forest leading-tight">
       Dê o primeiro passo para viver melhor.
@@ -1035,6 +1099,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- ======================================================= -->
 <!-- FOOTER                                                   -->
 <!-- ======================================================= -->
@@ -1044,7 +1110,7 @@
       <p class="font-display text-2xl text-white">Instituto <span class="text-mint">vivar</span></p>
       <p class="text-sm mt-4 leading-relaxed">Fisioterapia, psicologia, osteopatia e psicopedagogia sob o mesmo teto, em Laranjal Paulista/SP.</p>
     </div>
-    <div>
+    <nav aria-label="Navegação do rodapé">
       <p class="font-mono text-xs uppercase tracking-widest text-white/40 mb-4">Navegação</p>
       <ul class="space-y-2 text-sm">
         <li><a href="#quemsomos" class="hover:text-mint transition-colors">Quem somos</a></li>
@@ -1052,11 +1118,11 @@
         <li><a href="#areas" class="hover:text-mint transition-colors">Áreas de atendimento</a></li>
         <li><a href="#local" class="hover:text-mint transition-colors">Localização</a></li>
       </ul>
-    </div>
+    </nav>
     <div>
       <p class="font-mono text-xs uppercase tracking-widest text-white/40 mb-4">Contato</p>
       <ul class="space-y-2 text-sm">
-        <li>R. Alfredo Barbieri, 92 — Vila Conceição, Laranjal Paulista/SP</li>
+        <li><address class="not-italic inline">R. Alfredo Barbieri, 92 — Vila Conceição, Laranjal Paulista/SP</address></li>
         <li><a href="https://wa.me/5515997579428" target="_blank" rel="noopener" class="hover:text-mint transition-colors">WhatsApp</a></li>
         <li><a href="https://www.instagram.com/institutovivar_/" target="_blank" rel="noopener" class="hover:text-mint transition-colors">Instagram</a></li>
       </ul>
@@ -1067,7 +1133,7 @@
     </div>
   </div>
   <div class="max-w-7xl mx-auto px-6 lg:px-10 mt-14 pt-8 border-t border-white/10 text-xs flex flex-col sm:flex-row justify-between gap-2">
-    <p>© <span id="ano"></span> Instituto Vivar. Todos os direitos reservados.</p>
+    <p>© <time id="ano"></time> Instituto Vivar. Todos os direitos reservados.</p>
   </div>
 </footer>
 
@@ -1078,10 +1144,15 @@
    target="_blank" rel="noopener"
    aria-label="Falar no WhatsApp"
    class="wa-pulse fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-black/20 hover:scale-105 transition-transform">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 relative z-10"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.93 2.46a8.3 8.3 0 0 1 2.45 5.92c0 4.62-3.76 8.38-8.38 8.38a8.3 8.3 0 0 1-4.24-1.16l-.3-.18-3.14.82.84-3.06-.2-.32a8.28 8.28 0 0 1-1.27-4.4c0-4.62 3.76-8.46 8.31-8.46m-4.6 4.8c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.7 4.19 3.7 2.07.83 2.49.66 2.94.63.45-.04 1.45-.6 1.66-1.17.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.47"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 relative z-10" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.93 2.46a8.3 8.3 0 0 1 2.45 5.92c0 4.62-3.76 8.38-8.38 8.38a8.3 8.3 0 0 1-4.24-1.16l-.3-.18-3.14.82.84-3.06-.2-.32a8.28 8.28 0 0 1-1.27-4.4c0-4.62 3.76-8.46 8.31-8.46m-4.6 4.8c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.7 4.19 3.7 2.07.83 2.49.66 2.94.63.45-.04 1.45-.6 1.66-1.17.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.47"/></svg>
 </a>
 <!--conexão java script-->
-<script src="script.js"></script>
+<script src="script.js" defer></script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 
+<!-- Script separado -->
+<script type="module" src="reviews.js"></script>
 </body>
 </html>
