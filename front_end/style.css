@@ -1675,3 +1675,642 @@ section[id]{
 .ps4-shape {
   will-change: transform, opacity;
 }
+ .quiz-dot{
+    width: 30px; height: 5px; border-radius: 999px;
+    background: rgba(255,255,255,.22);
+    transition: background .3s ease, width .3s ease;
+  }
+  .quiz-dot.is-active{ background: #C9A66B; width: 48px; }
+  .quiz-dot.is-done{ background: #7FC9AE; }
+ 
+  .quiz-step-label{
+    display:inline-flex; align-items:center; gap:.9rem;
+  }
+  .quiz-diamond{
+    width: 1.1rem; height: 1.1rem;
+    background: #C9A66B;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    border-radius: 3px;
+  }
+ 
+  .quiz-option{
+    text-align: left;
+    border: 2px solid rgba(255,255,255,.28);
+    border-radius: 1.1rem;
+    padding: 1.4rem 1.6rem;
+    background: rgba(255,255,255,.09);
+    transition: border-color .25s ease, background .25s ease, transform .2s ease;
+    cursor: pointer;
+    
+    font-family: 'Manrope', sans-serif;
+    min-height: 76px;
+  }
+  .quiz-option:hover,
+  .quiz-option:focus-visible{
+    border-color: #C9A66B;
+    background: rgba(201,166,107,.18);
+    transform: translateY(-2px);
+  }
+  .quiz-option .quiz-option-title{
+    display:block; font-weight: 800; color:#fff; font-size: 1.2rem; line-height:1.3;
+  }
+  .quiz-option .quiz-option-sub{
+    display:block; font-size: 1rem; color: rgba(255,255,255,.75); margin-top: .3rem;
+  }
+ 
+  .quiz-step{
+    animation: quizFade .35s ease;
+  }
+  @keyframes quizFade{
+    from{ opacity:0; transform: translateY(6px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+ 
+  .quiz-result-badge{
+    width: 3.75rem; height: 3.75rem;
+    border-radius: 999px;
+    background: rgba(201,166,107,.16);
+    border: 2px solid #C9A66B;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; font-weight:700; color:#C9A66B; font-size:1.5rem;
+    flex-shrink: 0;
+  }
+ 
+  .quiz-back{
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(255,255,255,.1);
+    border: 2px solid rgba(255,255,255,.35);
+    border-radius: 999px;
+    padding: .85rem 1.6rem;
+    display:inline-flex; align-items:center; gap:.5rem;
+    cursor:pointer;
+    transition: border-color .25s ease, background .25s ease;
+  }
+  .quiz-back:hover,
+  .quiz-back:focus-visible{
+    border-color: #C9A66B;
+    background: rgba(201,166,107,.18);
+  }
+
+  /* =========================================================
+   INSTITUTO VIVAR
+   MENU RESPONSIVO — BREAKPOINT 1200px
+========================================================= */
+
+
+/* =========================================================
+   DESKTOP — ACIMA DE 1200px
+========================================================= */
+
+@media (min-width: 1201px) {
+
+  #menuBtn,
+  .menu-toggle {
+    display: none !important;
+  }
+
+  #mobileMenu {
+    display: none !important;
+  }
+
+}
+
+
+/* =========================================================
+   MENU MOBILE/TABLET — 1200px OU MENOS
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  /* -------------------------------------------------------
+     ESCONDE MENU DESKTOP
+  ------------------------------------------------------- */
+
+  header nav[aria-label="Navegação principal"] {
+    display: none !important;
+  }
+
+  header > div > div > a[class*="bg-forest"] {
+    display: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     HEADER
+  ------------------------------------------------------- */
+
+  #topo {
+    z-index: 10000 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     BOTÃO HAMBURGER
+  ------------------------------------------------------- */
+
+  #menuBtn,
+  .menu-toggle {
+    display: flex !important;
+
+    position: relative;
+
+    z-index: 10002;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+    margin-right: 2px;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    border: 0;
+    background: transparent;
+
+    color: #0E4B44;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+
+  .menu-line {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    background: #0E4B44;
+
+    border-radius: 999px;
+
+    transform-origin: center;
+
+    transition:
+      transform .45s cubic-bezier(.22,1,.36,1),
+      opacity .25s ease,
+      width .35s ease;
+  }
+
+
+  /* -------------------------------------------------------
+     HAMBURGER → X
+  ------------------------------------------------------- */
+
+  #menuBtn.is-open .menu-line-1,
+  .menu-toggle.is-open .menu-line-1 {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #menuBtn.is-open .menu-line-2,
+  .menu-toggle.is-open .menu-line-2 {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  #menuBtn.is-open .menu-line-3,
+  .menu-toggle.is-open .menu-line-3 {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+
+  /* =======================================================
+     MENU FULLSCREEN
+  ======================================================= */
+
+  #mobileMenu {
+    position: fixed !important;
+
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100dvh !important;
+
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+
+    z-index: 9999 !important;
+
+    display: flex !important;
+
+    background: #F6F3EC !important;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-18px) scale(.985);
+
+    overflow: hidden;
+
+    transition:
+      opacity .4s ease,
+      transform .5s cubic-bezier(.22,1,.36,1),
+      visibility 0s linear .5s;
+  }
+
+
+  /* -------------------------------------------------------
+     MENU ABERTO
+  ------------------------------------------------------- */
+
+  #mobileMenu.is-open {
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    pointer-events: auto !important;
+
+    transform: translateY(0) scale(1);
+
+    transition:
+      opacity .4s ease,
+      transform .5s cubic-bezier(.22,1,.36,1),
+      visibility 0s;
+  }
+
+
+  /* =======================================================
+     ÁREA INTERNA COM SCROLL
+  ======================================================= */
+
+  #mobileMenu .mobile-menu-inner {
+
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100dvh;
+
+    min-height: 0;
+
+    padding:
+      105px
+      clamp(22px, 5vw, 55px)
+      30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior: contain;
+
+    scrollbar-width: none;
+  }
+
+  #mobileMenu .mobile-menu-inner::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* =======================================================
+     TOPO DO MENU
+  ======================================================= */
+
+  .mobile-menu-top {
+
+    flex: 0 0 auto;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(14,75,68,.10);
+
+    opacity: 0;
+
+    transform: translateY(-10px);
+
+    transition:
+      opacity .4s ease .08s,
+      transform .5s cubic-bezier(.22,1,.36,1) .08s;
+  }
+
+  #mobileMenu.is-open .mobile-menu-top {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  /* =======================================================
+     LINKS
+  ======================================================= */
+
+  .mobile-nav-links {
+
+    flex: 0 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-top: 18px;
+
+    padding-bottom: 10px;
+  }
+
+
+  .mobile-nav-link {
+
+    flex: 0 0 auto;
+
+    min-height: 70px;
+
+    display: grid;
+
+    grid-template-columns: 38px minmax(0, 1fr) 30px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 16px 0;
+
+    color: #0E4B44;
+
+    text-decoration: none;
+
+    font-family: "Fraunces", serif;
+
+    font-size: clamp(1.65rem, 4vw, 2.6rem);
+
+    line-height: 1.05;
+
+    border-bottom: 1px solid rgba(14,75,68,.10);
+
+    opacity: 0;
+
+    transform: translateY(22px);
+
+    transition:
+      opacity .5s cubic-bezier(.22,1,.36,1),
+      transform .6s cubic-bezier(.22,1,.36,1),
+      color .25s ease;
+  }
+
+
+  /* animação sequencial */
+
+  #mobileMenu.is-open .mobile-nav-link:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .10s;
+  }
+
+  #mobileMenu.is-open .mobile-nav-link:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .16s;
+  }
+
+  #mobileMenu.is-open .mobile-nav-link:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .22s;
+  }
+
+  #mobileMenu.is-open .mobile-nav-link:nth-child(4) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .28s;
+  }
+
+  #mobileMenu.is-open .mobile-nav-link:nth-child(5) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .34s;
+  }
+
+  #mobileMenu.is-open .mobile-nav-link:nth-child(6) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .40s;
+  }
+
+
+  /* hover */
+
+  .mobile-nav-link:hover {
+    color: #168B82;
+  }
+
+
+  /* =======================================================
+     NÚMEROS
+  ======================================================= */
+
+  .mobile-nav-number {
+
+    align-self: start;
+
+    margin-top: 5px;
+
+    font-family: "Space Mono", monospace;
+
+    font-size: .68rem;
+
+    line-height: 1;
+
+    color: #168B82;
+
+    letter-spacing: .05em;
+  }
+
+
+  /* =======================================================
+     SETAS
+  ======================================================= */
+
+  .mobile-nav-arrow {
+
+    justify-self: end;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 1.25rem;
+
+    transition:
+      transform .35s cubic-bezier(.22,1,.36,1);
+  }
+
+  .mobile-nav-link:hover .mobile-nav-arrow {
+    transform: translate(4px,-4px);
+  }
+
+
+  /* =======================================================
+     QUIZ
+  ======================================================= */
+
+  .mobile-nav-quiz {
+    padding-bottom: 20px;
+  }
+
+
+  .mobile-nav-quiz small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-family: "Space Mono", monospace;
+
+    font-size: .55rem;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+    letter-spacing: .1em;
+
+    color: #C9A66B;
+  }
+
+
+  /* =======================================================
+     RODAPÉ
+  ======================================================= */
+
+  .mobile-menu-bottom {
+
+    flex: 0 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+
+    padding-top: 20px;
+
+    padding-bottom: 15px;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+      opacity .5s ease .45s,
+      transform .6s cubic-bezier(.22,1,.36,1) .45s;
+  }
+
+  #mobileMenu.is-open .mobile-menu-bottom {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  .mobile-menu-bottom > span {
+
+    font-family: "Space Mono", monospace;
+
+    font-size: .52rem;
+
+    line-height: 1.65;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    color: rgba(14,75,68,.45);
+  }
+
+
+  /* =======================================================
+     BOTÃO WHATSAPP DO MENU
+  ======================================================= */
+
+  .mobile-menu-cta {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px 20px;
+
+    border-radius: 999px;
+
+    background: #0E4B44;
+
+    color: white;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: .9rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+      background .3s ease,
+      color .3s ease,
+      transform .3s ease;
+  }
+
+  .mobile-menu-cta:hover {
+    background: #7FC9AE;
+    color: #0E4B44;
+    transform: translateY(-2px);
+  }
+
+
+  /* =======================================================
+     TRAVA O SCROLL DA PÁGINA
+     MAS NÃO O SCROLL DO MENU
+  ======================================================= */
+
+  html.menu-open,
+  body.menu-open {
+    overflow: hidden !important;
+    height: 100%;
+  }
+
+
+  /* =======================================================
+     EM TELAS MAIS BAIXAS
+     reduz um pouco os espaçamentos para caber melhor
+  ======================================================= */
+
+  @media (max-height: 700px) {
+
+    #mobileMenu .mobile-menu-inner {
+      padding-top: 95px;
+      padding-bottom: 20px;
+    }
+
+    .mobile-nav-link {
+      min-height: 60px;
+      padding: 12px 0;
+    }
+
+    .mobile-nav-links {
+      margin-top: 12px;
+    }
+
+  }
+
+}

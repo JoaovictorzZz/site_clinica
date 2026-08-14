@@ -5,21 +5,128 @@ document.getElementById('ano').textContent = new Date().getFullYear();
 
 // ============================================================
 // MENU MOBILE
-// ============================================================
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
+/* =========================================================
+   MENU RESPONSIVO — BREAKPOINT 1200px
+========================================================= */
 
-menuBtn.addEventListener('click', () => {
-  const isHidden = mobileMenu.classList.toggle('hidden');
-  menuBtn.setAttribute('aria-expanded', String(!isHidden));
-});
+(function () {
 
-mobileMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    menuBtn.setAttribute('aria-expanded', 'false');
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (!menuBtn || !mobileMenu) return;
+
+
+  /* -------------------------------------------------------
+     ABRIR
+  ------------------------------------------------------- */
+
+  function openMenu() {
+
+    menuBtn.classList.add("is-open");
+    mobileMenu.classList.add("is-open");
+
+    document.documentElement.classList.add("menu-open");
+    document.body.classList.add("menu-open");
+
+    menuBtn.setAttribute("aria-expanded", "true");
+    menuBtn.setAttribute("aria-label", "Fechar menu");
+
+    mobileMenu.setAttribute("aria-hidden", "false");
+  }
+
+
+  /* -------------------------------------------------------
+     FECHAR
+  ------------------------------------------------------- */
+
+  function closeMenu() {
+
+    menuBtn.classList.remove("is-open");
+    mobileMenu.classList.remove("is-open");
+
+    document.documentElement.classList.remove("menu-open");
+    document.body.classList.remove("menu-open");
+
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-label", "Abrir menu");
+
+    mobileMenu.setAttribute("aria-hidden", "true");
+  }
+
+
+  /* -------------------------------------------------------
+     TOGGLE
+  ------------------------------------------------------- */
+
+  menuBtn.addEventListener("click", function () {
+
+    const aberto = mobileMenu.classList.contains("is-open");
+
+    if (aberto) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+
   });
-});
+
+
+  /* -------------------------------------------------------
+     LINKS DO MENU
+     Fecha primeiro e depois navega
+  ------------------------------------------------------- */
+
+  const menuLinks = mobileMenu.querySelectorAll("a[href^='#']");
+
+  menuLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+      closeMenu();
+
+    });
+
+  });
+
+
+  /* -------------------------------------------------------
+     ESC
+  ------------------------------------------------------- */
+
+  document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+
+  });
+
+
+  /* -------------------------------------------------------
+     REDIMENSIONAMENTO
+     
+     Se passar de 1200px, fecha o menu e volta para desktop.
+  ------------------------------------------------------- */
+
+  function checkBreakpoint() {
+
+    if (window.innerWidth > 1200) {
+      closeMenu();
+    }
+
+  }
+
+  window.addEventListener("resize", checkBreakpoint);
+
+
+  /* -------------------------------------------------------
+     ESTADO INICIAL
+  ------------------------------------------------------- */
+
+  closeMenu();
+
+})();
 
 // ============================================================
 // NAV — muda de estilo ao rolar
@@ -167,3 +274,124 @@ if (careItems.length && careCard) {
 
   careObserver.observe(careCard);
 }
+(function(){
+  // ===================================================================
+  // DADOS: respostas do passo 2 por grupo, e resultado de cada uma.
+  // Ajuste títulos, descrições e o texto do WhatsApp livremente aqui.
+  // ===================================================================
+  const NUMERO_WHATSAPP = "5515997579428";
+ 
+  const especialidades = {
+    "fisio-infantil": {
+      titulo: "Fisioterapia Infantil",
+      inicial: "F",
+      desc: "Atuação em desenvolvimento infantil, assimetria craniana, torcicolo, crianças atípicas e fisioterapia respiratória, com atendimento lúdico e acolhedor."
+    },
+    "fisio-adulto": {
+      titulo: "Fisioterapia Adulto",
+      inicial: "F",
+      desc: "Reabilitação, pós-operatório, ortopedia e neurologia adulto, com acompanhamento individualizado para cada necessidade — incluindo cuidados voltados ao idoso."
+    },
+    "psicologia-infantil": {
+      titulo: "Psicologia Infantil",
+      inicial: "P",
+      desc: "Cuidado do desenvolvimento emocional, comportamental e social de crianças e adolescentes, com intervenções individualizadas — incluindo abordagem ABA quando indicada."
+    },
+    "osteopatia": {
+      titulo: "Osteopatia",
+      inicial: "O",
+      desc: "Técnicas manuais para disfunções musculoesqueléticas e viscerais, podendo auxiliar em refluxo, disquesia, constipação, cólicas e desconfortos corporais."
+    },
+    "psicopedagogia": {
+      titulo: "Psicopedagogia",
+      inicial: "P",
+      desc: "Avaliação e intervenção nas dificuldades de aprendizagem, com estímulo de atenção, memória e funções executivas ao longo do processo escolar."
+    },
+  };
+ 
+  // Passo 1 -> define o rótulo usado na mensagem do WhatsApp
+  const grupos = {
+    "crianca-pequena":     { rotulo: "meu bebê/filho(a) pequeno(a)" },
+    "crianca-adolescente": { rotulo: "meu filho(a)" },
+    "adulto":               { rotulo: "eu mesmo(a)" },
+    "idoso":                { rotulo: "um idoso da família" },
+  };
+ 
+  // Passo 2: opções por grupo -> cada uma aponta para uma especialidade
+  const perguntasPasso2 = {
+    "crianca-pequena": [
+      { label: "Desenvolvimento motor, postura ou torcicolo", sub: "engatinhar, sentar, andar", especialidade: "fisio-infantil" },
+      { label: "Cólicas, refluxo ou desconforto", sub: "sono, digestão", especialidade: "osteopatia" },
+      { label: "Comportamento ou emoções", sub: "choro, rotina, apego", especialidade: "psicologia-infantil" },
+    ],
+    "crianca-adolescente": [
+      { label: "Dificuldade escolar ou de aprendizagem", sub: "leitura, atenção, memória", especialidade: "psicopedagogia" },
+      { label: "Comportamento ou emocional", sub: "ansiedade, autorregulação", especialidade: "psicologia-infantil" },
+      { label: "Postura, movimento ou atividade física", sub: "reabilitação, esporte", especialidade: "fisio-infantil" },
+      { label: "Dores ou desconforto físico", sub: "musculoesquelético", especialidade: "osteopatia" },
+    ],
+    "adulto": [
+      { label: "Dor, lesão ou pós-operatório", sub: "reabilitação, ortopedia", especialidade: "fisio-adulto" },
+      { label: "Tensão ou desconforto estrutural", sub: "abordagem manual", especialidade: "osteopatia" },
+    ],
+    "idoso": [
+      { label: "Mobilidade, equilíbrio ou reabilitação", sub: "autonomia no dia a dia", especialidade: "fisio-adulto" },
+      { label: "Dor ou desconforto estrutural", sub: "abordagem manual", especialidade: "osteopatia" },
+    ],
+  };
+ 
+  // ===================================================================
+  // LÓGICA (não precisa mexer daqui pra baixo)
+  // ===================================================================
+  const root = document.getElementById("quiz");
+  const steps = root.querySelectorAll(".quiz-step");
+  const dots = root.querySelectorAll(".quiz-dot");
+  let grupoAtual = null;
+ 
+  function irPara(stepName){
+    steps.forEach(s => s.classList.toggle("hidden", s.dataset.step !== stepName));
+    const idx = { "1":1, "2":2, "result":3 }[stepName];
+    dots.forEach((d,i) => {
+      d.classList.toggle("is-active", i === idx-1);
+      d.classList.toggle("is-done", i < idx-1);
+    });
+  }
+ 
+  function montarPasso2(grupo){
+    grupoAtual = grupo;
+    const wrap = document.getElementById("quizStep2Options");
+    wrap.innerHTML = "";
+    perguntasPasso2[grupo].forEach(op => {
+      const btn = document.createElement("button");
+      btn.className = "quiz-option";
+      btn.dataset.especialidade = op.especialidade;
+      btn.innerHTML = `<span class="quiz-option-title">${op.label}</span><span class="quiz-option-sub">${op.sub}</span>`;
+      btn.addEventListener("click", () => mostrarResultado(op.especialidade));
+      wrap.appendChild(btn);
+    });
+    irPara("2");
+  }
+ 
+  function mostrarResultado(chaveEspecialidade){
+    const esp = especialidades[chaveEspecialidade];
+    const rotuloPessoa = grupos[grupoAtual].rotulo;
+ 
+    document.getElementById("quizResultTitle").textContent = esp.titulo;
+    document.getElementById("quizResultInitial").textContent = esp.inicial;
+    document.getElementById("quizResultDesc").textContent = esp.desc;
+ 
+    const mensagem = `Olá! Fiz o quiz do site do Instituto Vivar e, pelo resultado, o indicado para ${rotuloPessoa} é ${esp.titulo}. Gostaria de agendar uma consulta.`;
+    const link = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+    document.getElementById("quizWhatsappBtn").setAttribute("href", link);
+ 
+    irPara("result");
+  }
+ 
+  root.querySelectorAll('[data-group]').forEach(btn => {
+    btn.addEventListener("click", () => montarPasso2(btn.dataset.group));
+  });
+ 
+  root.querySelector('[data-action="back"]').addEventListener("click", () => irPara("1"));
+  root.querySelector('[data-action="restart"]').addEventListener("click", () => irPara("1"));
+ 
+})();
