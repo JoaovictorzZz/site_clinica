@@ -1417,6 +1417,8 @@ section[id]{
   transform: translateY(10px);
   transition: opacity .45s ease .05s, transform .45s ease .05s;
   white-space: nowrap;
+  color: #F6F3EC;
+  text-shadow: 0 2px 10px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.7);
 }
 .accordion-item:hover .accordion-caption,
 .accordion-item:focus-within .accordion-caption{
@@ -1434,6 +1436,21 @@ section[id]{
   .accordion-overlay,
   .accordion-caption{ opacity: 1 !important; transform: none !important; }
   .accordion-caption{ white-space: normal; }
+
+  /* Overlay uniforme no mobile: como a legenda fica sempre visível
+     (não só no hover) e pode ter várias linhas, um degradê de baixo
+     pra cima não é suficiente — a parte de cima do texto cai sobre
+     áreas claras da foto. Por isso escurecemos a foto inteira. */
+  .accordion-overlay{
+    background: rgba(14,75,68,.5);
+  }
+
+  .accordion-caption{
+    font-size: 1.15rem !important;
+    line-height: 1.3;
+    padding: 1.1rem;
+    text-shadow: 0 2px 12px rgba(0,0,0,.65), 0 1px 4px rgba(0,0,0,.85);
+  }
 }
 
 /* =========================================================
@@ -1979,33 +1996,13 @@ section[id]{
 
   /* =======================================================
      TOPO DO MENU
+     Removido visualmente: a logo real e o botão de fechar (X)
+     do header já ficam por cima do menu (z-index maior), então
+     esta barra de texto duplicada só confundia o usuário.
   ======================================================= */
 
   .mobile-menu-top {
-
-    flex: 0 0 auto;
-
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    padding-bottom: 18px;
-
-    border-bottom: 1px solid rgba(14,75,68,.10);
-
-    opacity: 0;
-
-    transform: translateY(-10px);
-
-    transition:
-      opacity .4s ease .08s,
-      transform .5s cubic-bezier(.22,1,.36,1) .08s;
-  }
-
-  #mobileMenu.is-open .mobile-menu-top {
-    opacity: 1;
-    transform: translateY(0);
+    display: none;
   }
 
 
