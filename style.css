@@ -1773,6 +1773,12 @@ section[id]{
     background: rgba(201,166,107,.18);
   }
 
+  .quiz-whatsapp-hint{
+    letter-spacing: .12em;
+    opacity: .95;
+    color: #ffffff;
+  }
+
   /* =========================================================
    INSTITUTO VIVAR
    MENU RESPONSIVO — BREAKPOINT 1200px
